@@ -1,45 +1,66 @@
 
 # Clones
 
-A high-fidelity clone of the ElevenLabs Text-to-Speech platform built with Next.js, featuring audio playback functionality and MongoDB integration.
+A high-fidelity clone of modern SaaS UIs built for learning and practice.
+
+> **⚠️ Disclaimer:**
+> These projects are **purely for educational and practice purposes**. All trademarks, logos, brand names, and assets used belong to their respective owners.
+> No commercial use is intended. All rights remain with the original creators.
+
+---
 
 ### Live Links
-### [Cursor](https://cursorcom-website-clone-17612950779.vercel.app/)
-### [Grok](https://ai-website-clone-1761067857895.vercel.app/)
-### [Elevenlabs](https://elevenlabs-clone-gilt.vercel.app/)
-### [VectorShift](https://vectorshift-clone-frontend.vercel.app/)
-### [Trello](https://smart-trello-task-board.vercel.app/)
+
+> **Note:** Each clone below uses publicly available assets (logos/images/icons) strictly for UI replication learning purposes only.
+
+### **[Cursor](https://cursorcom-website-clone-17612950779.vercel.app/)**
+
+> ⚠️ *This project is an educational clone. Original brand assets belong to Cursor.*
+
+### **[Grok](https://ai-website-clone-1761067857895.vercel.app/)**
+
+> ⚠️ *Created for learning. All Grok/OpenAI/X assets belong to the original owners.*
+
+### **[ElevenLabs](https://elevenlabs-clone-gilt.vercel.app/)**
+
+> ⚠️ *A practice clone. ElevenLabs logos & assets are property of ElevenLabs.*
+
+### **[VectorShift](https://vectorshift-clone-frontend.vercel.app/)**
+
+> ⚠️ *For UI study only. VectorShift branding belongs to VectorShift.*
+
+### **[Trello](https://smart-trello-task-board.vercel.app/)**
+
+> ⚠️ *Built for learning. Trello trademarks & assets belong to Atlassian.*
+
+---
 
 ## Features
 
-- **Responsive UI Design**: Pixel-perfect recreation of interface
-- **Text-to-Speech Interface**: Complete tab navigation with focus on Text-to-Speech functionality
-- **Audio Playback**: Language-specific audio playback (English/Arabic)
-- **MongoDB Integration**: Audio files stored and served from MongoDB Atlas
-- **Admin Panel**: File upload interface for managing audio content
-- **Modern Tech Stack**: Built with Next.js 15, TypeScript, and MongoDB
+* **Responsive UI Design**: Pixel-perfect recreation of original interfaces
+* **Text-to-Speech Interface**: Complete tab navigation and structured workflow
+* **Audio Playback**: English/Arabic playback features
+* **MongoDB Integration**: Audio stored and served via MongoDB Atlas
+* **Admin Panel**: Upload & manage audio files
+* **Modern Tech Stack**: Next.js 15, TypeScript, MongoDB
 
 ## Technology Stack
 
-- **Frontend**: Next.js 15.5.3 with TypeScript
-- **Build Tool**: Turbopack for fast development
-- **Database**: MongoDB Atlas
-- **Styling**: CSS-in-JS with inline styles
-- **Icons**: Lucide React
-- **HTTP Client**: Axios
-- **Runtime**: Node.js
-
+* **Frontend**: Next.js 15.5.3 + TypeScript
+* **Build Tool**: Turbopack
+* **Database**: MongoDB Atlas
+* **Styling**: CSS-in-JS
+* **Icons**: Lucide React
+* **HTTP Client**: Axios
+* **Runtime**: Node.js
 
 ## Author
 
 **Utsav Mishra**
-- Email: utsavmishraa005@gmail.com
-- Assignment: Clone Implementation
+
+* Email: [utsavmishraa005@gmail.com](mailto:utsavmishraa005@gmail.com)
+* Assignment: Clone Implementation
 
 ## License
 
-This project is created for educational/assignment purposes.
-
----
-
-**Built with Next.js and MongoDB Atlas**
+This project is created for **educational and non-commercial** use only.
