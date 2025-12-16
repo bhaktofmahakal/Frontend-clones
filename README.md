@@ -33,6 +33,10 @@ A high-fidelity clone of modern SaaS UIs built for learning and practice.
 
 > ⚠️ *Built for learning. Trello trademarks & assets belong to Atlassian.*
 
+### **[Defiant](https://defiant-vc-clone-fixed.vercel.app/)**
+
+> ⚠️ *This project is an educational clone. Original brand assets belong to Defiant.*
+
 ---
 
 ## Features
