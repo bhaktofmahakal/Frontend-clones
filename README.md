@@ -37,7 +37,7 @@ A high-fidelity clone of modern SaaS UIs built for learning and practice.
 
 > ⚠️ *This project is an educational clone. Original brand assets belong to Defiant.*
 
-### **[Corelayer][(https://corelayer.vercel.app/)**
+### **[Corelayer](https://corelayer.vercel.app/)**
 
 > ⚠️ *This project is an educational clone. Original brand assets belong to Corelayer.*
 ---
