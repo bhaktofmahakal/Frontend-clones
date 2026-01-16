@@ -54,6 +54,11 @@ A high-fidelity clone of modern SaaS UIs built for learning and practice.
 * **Admin Panel**: Upload & manage audio files
 * **Modern Tech Stack**: Next.js 15, TypeScript, MongoDB
 
+
+## Personal- Beginner
+[DevMentor](https://dev-mentor-ai-zeta.vercel.app/)
+[Talksy](https://talksy-sand.vercel.app/)
+
 ## Technology Stack
 
 * **Frontend**: Next.js 15.5.3 + TypeScript
