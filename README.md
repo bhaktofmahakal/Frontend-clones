@@ -40,6 +40,10 @@ A high-fidelity clone of modern SaaS UIs built for learning and practice.
 ### **[Corelayer](https://corelayer.vercel.app/)**
 
 > ⚠️ *This project is an educational clone. Original brand assets belong to Corelayer.*
+
+### **[Antigravity](https://antigravity-google.vercel.app/)**
+
+> ⚠️ *Built for learning. trademarks & assets belong to Antigravity.*
 ---
 ## Features
 
