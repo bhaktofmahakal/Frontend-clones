@@ -8,7 +8,7 @@ A high-fidelity clone of modern SaaS UIs built for learning and practice.
 > No commercial use is intended. All rights remain with the original creators.
 
 
-**TRY THIS** :- (https://github.com/bhaktofmahakal/Frontend-clones/blob/main/try-hero-prompt.md)
+**TRY THIS** :- [Prompts](https://github.com/bhaktofmahakal/Frontend-clones/blob/main/try-hero-prompt.md)
 ---
 
 ### Live Links
