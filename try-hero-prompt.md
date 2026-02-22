@@ -230,3 +230,8 @@ Staggered fade-in-up on load: Badges → Headline → Subtitle → Buttons
   > *"Find the perfect car that fits our journey"*
 
 > **Responsive:** Left + right in a single bottom row on large screens · stack vertically on smaller screens
+
+
+**MORE COMING**
+[Preview](https://hero-drive-dream.lovable.app/)
+
