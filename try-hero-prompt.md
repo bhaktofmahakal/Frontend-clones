@@ -2,7 +2,7 @@
 
 ---
 
-## 1. Wealth Management Platform
+## 1. Wealth Management Platform [Preview](https://saas-landing-rouge.vercel.app)
 
 **Tech:** React · Tailwind CSS
 
@@ -73,7 +73,7 @@
 
 ---
 
-## 3. Taskora — SaaS Hero
+## 3. Taskora — SaaS Hero [Live](https://taskora-saas-hero-section.vercel.app/) 
 
 **Tech:** React · Tailwind CSS · Framer Motion
 
@@ -121,7 +121,7 @@
 
 ---
 
-## 4. ClearInvoice — SaaS Hero
+## 4. ClearInvoice — SaaS Hero [Preview](https://clear-invoice-hero.lovable.app/)
 
 **Tech:** React (Vite) · Tailwind CSS · motion/react · lucide-react · hls.js
 
