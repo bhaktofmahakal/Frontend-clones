@@ -195,7 +195,7 @@ Staggered fade-in-up on load: Badges → Headline → Subtitle → Buttons
 
 ---
 
-## 6. Automotive Dealership Hero
+## 6. Automotive Dealership Hero [Preview](https://hero-drive-dream.lovable.app/)
 
 **Tech:** React · Tailwind CSS · Google Fonts (Inter 400/500/600, Bebas Neue)
 
@@ -233,5 +233,5 @@ Staggered fade-in-up on load: Badges → Headline → Subtitle → Buttons
 
 
 **MORE COMING**
-[Preview](https://hero-drive-dream.lovable.app/)
+
 
