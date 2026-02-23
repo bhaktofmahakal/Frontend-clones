@@ -164,7 +164,7 @@
 
 ---
 
-## 5. Synapse — Innovation Hero
+## 5. Synapse — Innovation Hero  [Preview](https://video-hero-section.vercel.app/)
 
 **Tech:** React · Tailwind CSS · Framer Motion · hls.js
 
