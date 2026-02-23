@@ -40,7 +40,7 @@
 
 ---
 
-## 2. Bold Typography Hero
+## 2. Bold Typography Hero [Live](https://hero-typography.vercel.app/)
 
 **Tech:** React · Tailwind CSS
 
