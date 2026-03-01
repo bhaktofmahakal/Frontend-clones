@@ -1,10 +1,27 @@
 # Hero Section Prompts Collection
 
+> A curated collection of production-ready SaaS hero section prompts with live previews, full tech stacks, and detailed implementation specs.
+
 ---
 
-## 1. Wealth Management Platform [Preview](https://saas-landing-rouge.vercel.app)
+## Table of Contents
 
-**Tech:** React · Tailwind CSS
+| # | Template | Tech Stack | Live Link |
+|---|----------|------------|-----------|
+| 1 | [Wealth Management Platform](#1-wealth-management-platform) | React · Tailwind CSS | [Preview →](https://saas-landing-rouge.vercel.app) |
+| 2 | [Bold Typography Hero](#2-bold-typography-hero) | React · Tailwind CSS | [Preview →](https://hero-typography.vercel.app/) |
+| 3 | [Taskora — SaaS Hero](#3-taskora--saas-hero) | React · Tailwind CSS · Framer Motion | [Preview →](https://taskora-saas-hero-section.vercel.app/) |
+| 4 | [ClearInvoice — SaaS Hero](#4-clearinvoice--saas-hero) | React (Vite) · Tailwind CSS · hls.js | [Preview →](https://clear-invoice-hero.lovable.app/) |
+| 5 | [Synapse — Innovation Hero](#5-synapse--innovation-hero) | React · Tailwind CSS · Framer Motion · hls.js | [Preview →](https://video-hero-section.vercel.app/) |
+| 6 | [Automotive Dealership Hero](#6-automotive-dealership-hero) | React · Tailwind CSS · Google Fonts | [Preview →](https://hero-drive-dream.lovable.app/) |
+
+---
+
+## 1. Wealth Management Platform
+
+**🔗 Live Preview:** [saas-landing-rouge.vercel.app](https://saas-landing-rouge.vercel.app)
+
+**🛠 Tech Stack:** React · Tailwind CSS
 
 ### Layout & Background
 - Full viewport height (`min-h-screen`) with a **black** background
@@ -40,9 +57,11 @@
 
 ---
 
-## 2. Bold Typography Hero [Live](https://hero-typography.vercel.app/)
+## 2. Bold Typography Hero
 
-**Tech:** React · Tailwind CSS
+**🔗 Live Preview:** [hero-typography.vercel.app](https://hero-typography.vercel.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS
 
 ### Layout & Positioning
 - `min-h-screen` with dark blue fallback background (`#21346e`)
@@ -73,9 +92,11 @@
 
 ---
 
-## 3. Taskora — SaaS Hero [Live](https://taskora-saas-hero-section.vercel.app/) 
+## 3. Taskora — SaaS Hero
 
-**Tech:** React · Tailwind CSS · Framer Motion
+**🔗 Live Preview:** [taskora-saas-hero-section.vercel.app](https://taskora-saas-hero-section.vercel.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS · Framer Motion
 
 ### Visual Style
 - Dark base (`#050505`) · White text
@@ -121,9 +142,11 @@
 
 ---
 
-## 4. ClearInvoice — SaaS Hero [Preview](https://clear-invoice-hero.lovable.app/)
+## 4. ClearInvoice — SaaS Hero
 
-**Tech:** React (Vite) · Tailwind CSS · motion/react · lucide-react · hls.js
+**🔗 Live Preview:** [clear-invoice-hero.lovable.app](https://clear-invoice-hero.lovable.app/)
+
+**🛠 Tech Stack:** React (Vite) · Tailwind CSS · motion/react · lucide-react · hls.js
 
 ### Background Video
 - Source: `https://stream.mux.com/hUT6X11m1Vkw1QMxPOLgI761x2cfpi9bHFbi5cNg4014.m3u8`
@@ -164,9 +187,11 @@
 
 ---
 
-## 5. Synapse — Innovation Hero  [Preview](https://video-hero-section.vercel.app/)
+## 5. Synapse — Innovation Hero
 
-**Tech:** React · Tailwind CSS · Framer Motion · hls.js
+**🔗 Live Preview:** [video-hero-section.vercel.app](https://video-hero-section.vercel.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS · Framer Motion · hls.js
 
 ### Navbar (Fixed, Blurred Glass)
 | Element | Detail |
@@ -195,9 +220,11 @@ Staggered fade-in-up on load: Badges → Headline → Subtitle → Buttons
 
 ---
 
-## 6. Automotive Dealership Hero [Preview](https://hero-drive-dream.lovable.app/)
+## 6. Automotive Dealership Hero
 
-**Tech:** React · Tailwind CSS · Google Fonts (Inter 400/500/600, Bebas Neue)
+**🔗 Live Preview:** [hero-drive-dream.lovable.app](https://hero-drive-dream.lovable.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS · Google Fonts (Inter 400/500/600, Bebas Neue)
 
 ### Background
 - Full viewport height (`min 600px`, `max 965px`) · dark fallback `#010101`
@@ -231,7 +258,6 @@ Staggered fade-in-up on load: Badges → Headline → Subtitle → Buttons
 
 > **Responsive:** Left + right in a single bottom row on large screens · stack vertically on smaller screens
 
+---
 
-**MORE COMING**
-
-
+> **More templates coming soon.**
