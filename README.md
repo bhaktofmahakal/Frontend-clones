@@ -45,6 +45,35 @@ A curated collection of high-fidelity frontend clones of modern SaaS and AI-prod
 
 ---
 
+## Hero Prompt Templates
+
+A separate collection of production-ready **SaaS hero-section prompts** with live previews, full tech stacks, and detailed implementation specs.
+
+📄 **[View all prompts →](https://github.com/bhaktofmahakal/Frontend-clones/blob/main/try-hero-prompt.md)**
+
+| # | Template | Tech Stack | Live Preview |
+|---|----------|------------|--------------|
+| 1 | Wealth Management Platform | React · Tailwind CSS | [Preview →](https://saas-landing-rouge.vercel.app) |
+| 2 | Bold Typography Hero | React · Tailwind CSS | [Preview →](https://hero-typography.vercel.app/) |
+| 3 | Taskora — SaaS Hero | React · Tailwind CSS · Framer Motion | [Preview →](https://taskora-saas-hero-section.vercel.app/) |
+| 4 | ClearInvoice — SaaS Hero | React (Vite) · Tailwind CSS · hls.js | [Preview →](https://clear-invoice-hero.lovable.app/) |
+| 5 | Synapse — Innovation Hero | React · Tailwind CSS · Framer Motion · hls.js | [Preview →](https://video-hero-section.vercel.app/) |
+| 6 | Automotive Dealership Hero | React · Tailwind CSS · Google Fonts | [Preview →](https://hero-drive-dream.lovable.app/) |
+
+---
+
+## Personal Projects
+
+Side projects by the same author:
+
+| Project | Description | Link |
+|---------|-------------|------|
+| **Repo-Lens** | GitHub repository analyser | [repo-lens-gamma.vercel.app](https://repo-lens-gamma.vercel.app/) |
+| **DevMentor** | AI-powered developer mentorship tool | [dev-mentor-ai-zeta.vercel.app](https://dev-mentor-ai-zeta.vercel.app/) |
+| **Talksy** | Conversational AI chat app | [talksy-sand.vercel.app](https://talksy-sand.vercel.app/) |
+
+---
+
 ## ElevenLabs Clone — Local Setup
 
 The ElevenLabs clone is the most feature-complete project in this repository and includes a working backend with MongoDB Atlas for audio storage and an admin panel for managing audio files.
@@ -132,37 +161,6 @@ vercel --prod
 ```
 
 Add the environment variables (`MONGODB_URI`, `MONGODB_DB`, `DEFAULT_ENGLISH_AUDIO_URL`, `DEFAULT_ARABIC_AUDIO_URL`) in your **Vercel project → Settings → Environment Variables**.
-
----
-
-## Hero Prompt Templates
-
-A separate collection of production-ready **SaaS hero-section prompts** with live previews, full tech stacks, and detailed implementation specs.
-
-📄 **[View all prompts →](https://github.com/bhaktofmahakal/Frontend-clones/blob/main/try-hero-prompt.md)**
-
-| # | Template | Tech Stack | Live Preview |
-|---|----------|------------|--------------|
-| 1 | Wealth Management Platform | React · Tailwind CSS | [Preview →](https://saas-landing-rouge.vercel.app) |
-| 2 | Bold Typography Hero | React · Tailwind CSS | [Preview →](https://hero-typography.vercel.app/) |
-| 3 | Taskora — SaaS Hero | React · Tailwind CSS · Framer Motion | [Preview →](https://taskora-saas-hero-section.vercel.app/) |
-| 4 | ClearInvoice — SaaS Hero | React (Vite) · Tailwind CSS · hls.js | [Preview →](https://clear-invoice-hero.lovable.app/) |
-| 5 | Synapse — Innovation Hero | React · Tailwind CSS · Framer Motion · hls.js | [Preview →](https://video-hero-section.vercel.app/) |
-| 6 | Automotive Dealership Hero | React · Tailwind CSS · Google Fonts | [Preview →](https://hero-drive-dream.lovable.app/) |
-
----
-
-## Personal Projects
-
-Side projects by the same author:
-
-| Project | Description | Link |
-|---------|-------------|------|
-| **Repo-Lens** | GitHub repository analyser | [repo-lens-gamma.vercel.app](https://repo-lens-gamma.vercel.app/) |
-| **DevMentor** | AI-powered developer mentorship tool | [dev-mentor-ai-zeta.vercel.app](https://dev-mentor-ai-zeta.vercel.app/) |
-| **Talksy** | Conversational AI chat app | [talksy-sand.vercel.app](https://talksy-sand.vercel.app/) |
-
----
 
 ## Contributing
 
