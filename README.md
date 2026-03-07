@@ -1,88 +1,194 @@
+# Frontend Clones
 
-# Clones
+![License](https://img.shields.io/badge/license-Educational%20Use%20Only-blue)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)
 
-A high-fidelity clone of modern SaaS UIs built for learning and practice.
+A curated collection of high-fidelity frontend clones of modern SaaS and AI-product websites, built for **learning and UI practice**. Each clone replicates the design, layout, and interactions of the original product as closely as possible.
 
 > **⚠️ Disclaimer:**
-> These projects are **purely for educational and practice purposes**. All trademarks, logos, brand names, and assets used belong to their respective owners.
-> No commercial use is intended. All rights remain with the original creators.
+> All projects in this repository are **strictly for educational and non-commercial purposes**.
+> All trademarks, logos, brand names, and assets used belong to their respective owners.
+> No affiliation with or endorsement by the original brands is implied.
 
-
-**TRY THIS** :- [Prompts](https://github.com/bhaktofmahakal/Frontend-clones/blob/main/try-hero-prompt.md)
 ---
 
-### Live Links
+## Table of Contents
 
-> **Note:** Each clone below uses publicly available assets (logos/images/icons) strictly for UI replication learning purposes only.
+- [Live Clones](#live-clones)
+- [ElevenLabs Clone — Local Setup](#elevenlabs-clone--local-setup)
+- [Hero Prompt Templates](#hero-prompt-templates)
+- [Personal Projects](#personal-projects)
+- [Contributing](#contributing)
+- [Author](#author)
+- [License](#license)
 
-### **[Cursor](https://cursorcom-website-clone-17612950779.vercel.app/)**
-
-> ⚠️ *This project is an educational clone. Original brand assets belong to Cursor.*
-
-### **[Grok](https://ai-website-clone-1761067857895.vercel.app/)**
-
-> ⚠️ *Created for learning. All Grok/OpenAI/X assets belong to the original owners.*
-
-### **[ElevenLabs](https://elevenlabs-clone-gilt.vercel.app/)**
-
-> ⚠️ *A practice clone. ElevenLabs logos & assets are property of ElevenLabs.*
-
-### **[VectorShift](https://vectorshift-clone-frontend.vercel.app/)**
-
-> ⚠️ *For UI study only. VectorShift branding belongs to VectorShift.*
-
-### **[Trello](https://smart-trello-task-board.vercel.app/)**
-
-> ⚠️ *Built for learning. Trello trademarks & assets belong to Atlassian.*
-
-### **[Defiant](https://defiant-vc-clone-fixed.vercel.app/)**
-
-> ⚠️ *This project is an educational clone. Original brand assets belong to Defiant.*
-
-### **[Corelayer](https://corelayer.vercel.app/)**
-
-> ⚠️ *This project is an educational clone. Original brand assets belong to Corelayer.*
-
-### **[Antigravity](https://antigravity-google.vercel.app/)**
-
-> ⚠️ *Built for learning. trademarks & assets belong to Antigravity.*
-
-### **[Reflex](https://reflex-dev-clone.vercel.app/)**
-
-> ⚠️ *For UI study only. Reflex branding belongs to Reflex.*
 ---
-## Features
 
-* **Responsive UI Design**: Pixel-perfect recreation of original interfaces
-* **Text-to-Speech Interface**: Complete tab navigation and structured workflow
-* **Audio Playback**: English/Arabic playback features
-* **MongoDB Integration**: Audio stored and served via MongoDB Atlas
-* **Admin Panel**: Upload & manage audio files
-* **Modern Tech Stack**: Next.js 15, TypeScript, MongoDB
+## Live Clones
 
+> Each project uses publicly available assets (logos, images, icons) solely for UI-replication and learning purposes.
 
-## Personal- 
-[Repo-Lens](https://repo-lens-gamma.vercel.app/)
-[DevMentor](https://dev-mentor-ai-zeta.vercel.app/)
-[Talksy](https://talksy-sand.vercel.app/)
+| Clone | Live Demo | Tech Stack | Description |
+|-------|-----------|------------|-------------|
+| **Cursor** | [View →](https://cursorcom-website-clone-17612950779.vercel.app/) | Next.js · CSS | AI-powered code editor landing page |
+| **Grok** | [View →](https://ai-website-clone-1761067857895.vercel.app/) | Next.js · CSS | xAI Grok chatbot product page |
+| **ElevenLabs** | [View →](https://elevenlabs-clone-gilt.vercel.app/) | Next.js 15 · TypeScript · MongoDB | Text-to-speech platform with audio playback |
+| **VectorShift** | [View →](https://vectorshift-clone-frontend.vercel.app/) | Next.js · CSS | AI automation platform landing page |
+| **Trello** | [View →](https://smart-trello-task-board.vercel.app/) | Next.js · CSS | Kanban task-board interface |
+| **Defiant** | [View →](https://defiant-vc-clone-fixed.vercel.app/) | Next.js · CSS | Venture capital firm website |
+| **Corelayer** | [View →](https://corelayer.vercel.app/) | Next.js · CSS | Enterprise SaaS product page |
+| **Antigravity** | [View →](https://antigravity-google.vercel.app/) | Next.js · CSS | Creative agency / startup landing page |
+| **Reflex** | [View →](https://reflex-dev-clone.vercel.app/) | Next.js · CSS | Python web-framework product page |
 
-## Technology Stack
+---
 
-* **Frontend**: Next.js 15.5.3 + TypeScript
-* **Build Tool**: Turbopack
-* **Database**: MongoDB Atlas
-* **Styling**: CSS-in-JS
-* **Icons**: Lucide React
-* **HTTP Client**: Axios
-* **Runtime**: Node.js
+## ElevenLabs Clone — Local Setup
+
+The ElevenLabs clone is the most feature-complete project in this repository and includes a working backend with MongoDB Atlas for audio storage and an admin panel for managing audio files.
+
+### Prerequisites
+
+- **Node.js** 18 or later
+- **npm** or **yarn**
+- A free **[MongoDB Atlas](https://www.mongodb.com/cloud/atlas)** account
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/bhaktofmahakal/Frontend-clones.git
+cd Frontend-clones/elevenlabs-clone
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env.local` file inside the `elevenlabs-clone/` directory:
+
+```env
+# MongoDB Atlas
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority
+MONGODB_DB=elevenlabs_clone
+
+# Default audio fallbacks (optional)
+DEFAULT_ENGLISH_AUDIO_URL=https://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg
+DEFAULT_ARABIC_AUDIO_URL=https://commondatastorage.googleapis.com/codeskulptor-demos/pyman_assets/intromusic.ogg
+```
+
+### 4. Run the Development Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Project Structure
+
+```
+elevenlabs-clone/
+├── src/
+│   ├── app/
+│   │   ├── admin/              # Admin panel for audio uploads
+│   │   ├── api/
+│   │   │   ├── audio/          # GET / POST audio records
+│   │   │   └── upload-audio/   # File upload endpoint
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── TabsNavigation.tsx
+│   │   └── TextToSpeechTab.tsx
+│   └── lib/
+│       └── mongodb.ts          # MongoDB connection helper
+├── public/
+├── .env.local                  # ← create this (not committed)
+└── package.json
+```
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/audio?language=en` | Fetch audio record by language (`en` or `ar`) |
+| `POST` | `/api/audio` | Create or update an audio record |
+| `POST` | `/api/upload-audio` | Upload an audio file |
+
+### Deploying to Vercel
+
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
+
+Add the environment variables (`MONGODB_URI`, `MONGODB_DB`, `DEFAULT_ENGLISH_AUDIO_URL`, `DEFAULT_ARABIC_AUDIO_URL`) in your **Vercel project → Settings → Environment Variables**.
+
+---
+
+## Hero Prompt Templates
+
+A separate collection of production-ready **SaaS hero-section prompts** with live previews, full tech stacks, and detailed implementation specs.
+
+📄 **[View all prompts →](https://github.com/bhaktofmahakal/Frontend-clones/blob/main/try-hero-prompt.md)**
+
+| # | Template | Tech Stack | Live Preview |
+|---|----------|------------|--------------|
+| 1 | Wealth Management Platform | React · Tailwind CSS | [Preview →](https://saas-landing-rouge.vercel.app) |
+| 2 | Bold Typography Hero | React · Tailwind CSS | [Preview →](https://hero-typography.vercel.app/) |
+| 3 | Taskora — SaaS Hero | React · Tailwind CSS · Framer Motion | [Preview →](https://taskora-saas-hero-section.vercel.app/) |
+| 4 | ClearInvoice — SaaS Hero | React (Vite) · Tailwind CSS · hls.js | [Preview →](https://clear-invoice-hero.lovable.app/) |
+| 5 | Synapse — Innovation Hero | React · Tailwind CSS · Framer Motion · hls.js | [Preview →](https://video-hero-section.vercel.app/) |
+| 6 | Automotive Dealership Hero | React · Tailwind CSS · Google Fonts | [Preview →](https://hero-drive-dream.lovable.app/) |
+
+---
+
+## Personal Projects
+
+Side projects by the same author:
+
+| Project | Description | Link |
+|---------|-------------|------|
+| **Repo-Lens** | GitHub repository analyser | [repo-lens-gamma.vercel.app](https://repo-lens-gamma.vercel.app/) |
+| **DevMentor** | AI-powered developer mentorship tool | [dev-mentor-ai-zeta.vercel.app](https://dev-mentor-ai-zeta.vercel.app/) |
+| **Talksy** | Conversational AI chat app | [talksy-sand.vercel.app](https://talksy-sand.vercel.app/) |
+
+---
+
+## Contributing
+
+Contributions, suggestions, and new clone ideas are welcome!
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feat/new-clone`
+3. Commit your changes: `git commit -m "feat: add <SiteName> clone"`
+4. Push to your branch: `git push origin feat/new-clone`
+5. Open a Pull Request
+
+Please make sure your clone is pixel-accurate, fully responsive, and includes a live deployment link.
+
+---
 
 ## Author
 
 **Utsav Mishra**
 
-* Email: [utsavmishraa005@gmail.com](mailto:utsavmishraa005@gmail.com)
-* Assignment: Clone Implementation
+- 📧 [utsavmishraa005@gmail.com](mailto:utsavmishraa005@gmail.com)
+- 🐙 [github.com/bhaktofmahakal](https://github.com/bhaktofmahakal)
+
+---
 
 ## License
 
-This project is created for **educational and non-commercial** use only.
+This repository is created for **educational and non-commercial use only**.
+All original brand assets, trademarks, and logos referenced within the clones belong to their respective owners.
+Reproduction for commercial purposes is strictly prohibited.
