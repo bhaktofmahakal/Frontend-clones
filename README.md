@@ -69,7 +69,7 @@ Side projects by the same author:
 | Project | Description | Link |
 |---------|-------------|------|
 | **Repo-Lens** | GitHub repository analyser | [repo-lens-gamma.vercel.app](https://repo-lens-gamma.vercel.app/) |
-| **DevMentor** | AI-powered developer mentorship tool | [dev-mentor-ai-zeta.vercel.app](https://dev-mentor-ai-zeta.vercel.app/) |
+
 | **Talksy** | Conversational AI chat app | [talksy-sand.vercel.app](https://talksy-sand.vercel.app/) |
 
 ---
