@@ -15,6 +15,7 @@
 | 5 | [Synapse — Innovation Hero](#5-synapse--innovation-hero) | React · Tailwind CSS · Framer Motion · hls.js | [Preview →](https://video-hero-section.vercel.app/) |
 | 6 | [Automotive Dealership Hero](#6-automotive-dealership-hero) | React · Tailwind CSS · Google Fonts | [Preview →](https://hero-drive-dream.lovable.app/) |
 | 7 | [Ethereal Glow — Talent Acquisition Hero](#7-ethereal-glow--talent-acquisition-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://ethereal-glow-hero.lovable.app) |
+| 8 | [Velorah — Cinematic Video Hero](#8-velorah--cinematic-video-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://velorah.lovable.app/) |
 
 ---
 
@@ -341,3 +342,43 @@ Immediately below the hero section — displays trust signals or background vide
 - Infinite horizontal scroll using the custom `marquee` animation
 - Logos duplicated (2× set) so the loop is seamless at `translateX(-50%)`
 - Grayscale / low-opacity treatment to keep focus on headline
+
+---
+
+## 8. Velorah — Cinematic Video Hero
+
+**🔗 Live Preview:** [velorah.lovable.app](https://velorah.lovable.app/)
+
+**🛠 Tech Stack:** React · Vite · Tailwind CSS · TypeScript · shadcn/ui
+
+### Overview
+Create a single-page hero section with a fullscreen looping background video, glassmorphic navigation, and cinematic typography.
+
+### Background Video
+- Fullscreen, absolute-positioned, `autoPlay loop muted playsInline`
+- `object-cover w-full h-full` to fill the entire viewport without distortion
+- Subtle dark overlay (`bg-black/40`) placed above the video to ensure text legibility
+- `z-index: -10` (behind all content)
+
+### Glassmorphic Navigation
+- Fixed top bar · `backdrop-blur-md` · `bg-white/10` · thin `border-b border-white/10`
+- **Left:** Brand logo / wordmark in white
+- **Center:** Navigation links — white text with `hover:text-white/70` transition
+- **Right:** CTA button using `shadcn/ui` `<Button>` — ghost or outline variant styled for glass context
+- Full responsiveness: hamburger menu on mobile using shadcn/ui `Sheet` or similar
+
+### Hero Content (Centered, `z-10`)
+| Element | Detail |
+|---------|--------|
+| **Headline** | Cinematic large type — white, tight tracking (`tracking-tight` or tighter), `font-bold` or `font-light` for contrast |
+| **Subtitle** | 1–2 lines of supporting text — `text-white/80`, `text-lg` or `text-xl` |
+| **CTA Buttons** | Primary (solid white, dark text) + Secondary (ghost/glass style) — both using shadcn/ui `<Button>` |
+
+### Typography
+- Use a display-weight Google Font (e.g., **Playfair Display**, **Cormorant**, or **DM Serif Display**) for the headline to achieve a cinematic feel
+- Body / nav text in a clean sans-serif (e.g., **Inter** or **Geist**)
+
+### Tailwind / shadcn/ui Notes
+- Glassmorphism utility: `bg-white/10 backdrop-blur-md border border-white/20 rounded-xl`
+- All interactive elements built with shadcn/ui primitives (`Button`, `NavigationMenu`, `Sheet`)
+- Dark-mode-first: single dark theme, no toggle needed
