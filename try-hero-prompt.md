@@ -14,6 +14,7 @@
 | 4 | [ClearInvoice — SaaS Hero](#4-clearinvoice--saas-hero) | React (Vite) · Tailwind CSS · hls.js | [Preview →](https://clear-invoice-hero.lovable.app/) |
 | 5 | [Synapse — Innovation Hero](#5-synapse--innovation-hero) | React · Tailwind CSS · Framer Motion · hls.js | [Preview →](https://video-hero-section.vercel.app/) |
 | 6 | [Automotive Dealership Hero](#6-automotive-dealership-hero) | React · Tailwind CSS · Google Fonts | [Preview →](https://hero-drive-dream.lovable.app/) |
+| 7 | [Ethereal Glow — Talent Acquisition Hero](#7-ethereal-glow--talent-acquisition-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://ethereal-glow-hero.lovable.app) |
 
 ---
 
@@ -261,3 +262,82 @@ Staggered fade-in-up on load: Badges → Headline → Subtitle → Buttons
 ---
 
 > **More templates coming soon.**
+
+---
+
+## 7. Ethereal Glow — Talent Acquisition Hero
+
+**🔗 Live Preview:** [ethereal-glow-hero.lovable.app](https://ethereal-glow-hero.lovable.app)
+
+**🛠 Tech Stack:** React · Vite · Tailwind CSS · TypeScript · shadcn/ui · @fontsource/geist-sans
+
+### Theme & Design Tokens (`index.css`)
+Single dark theme (no light/dark toggle). All colors defined in HSL:
+
+| Token | Value |
+|-------|-------|
+| `--background` | `260 87% 3%` |
+| `--foreground` | `40 6% 95%` |
+| `--card` | `240 6% 9%` |
+| `--primary` | `262 83% 58%` |
+| `--primary-foreground` | `0 0% 100%` |
+| `--secondary` | `240 4% 16%` |
+| `--muted-foreground` | `240 5% 65%` |
+| `--border` | `240 4% 20%` |
+| `--ring` | `262 83% 58%` |
+| `--radius` | `0.75rem` |
+| `--hero-heading` | `40 10% 96%` |
+| `--hero-sub` | `40 6% 82%` |
+
+**Font imports** (Geist Sans weights 400 / 500 / 600 / 700 via `@fontsource/geist-sans`).  
+Body font stack: `'Geist Sans', 'Inter', system-ui, sans-serif`.
+
+### Liquid Glass Utility (`index.css` — `@layer utilities`)
+`.liquid-glass` — `rgba(255,255,255,0.01)` background · `backdrop-filter: blur(4px)` · `box-shadow: inset 0 1px 1px rgba(255,255,255,0.1)`.  
+`::before` pseudo-element draws a 1.4px gradient border (top & bottom edges: `rgba(255,255,255,0.45)`, mid: fully transparent) using CSS mask `xor` trick — no visible border rectangle, only the edge shimmer.
+
+### Tailwind Config (`tailwind.config.ts`)
+- All CSS token colors mapped to `hsl(var(--token))`
+- Extra color group: `hero.heading` → `hsl(var(--hero-heading))`, `hero.sub` → `hsl(var(--hero-sub))`
+- Custom keyframe **marquee**: `0% { transform: translateX(0%) }` → `100% { transform: translateX(-50%) }`
+- Animation: `marquee: "marquee 20s linear infinite"`
+
+### Button Variants (shadcn `button.tsx`)
+Two additional variants added alongside the defaults:
+
+| Variant | Styles |
+|---------|--------|
+| `hero` | `bg-primary text-primary-foreground rounded-full px-6 py-3 text-base font-medium hover:bg-primary/90` |
+| `heroSecondary` | `liquid-glass text-foreground rounded-full px-6 py-3 text-base font-normal hover:bg-white/5` |
+
+### Navbar Component
+- Full-width · `py-5 px-8` · `flex row justify-between`
+- **Left:** `<img>` logo — `src/assets/logo.png` · `height: 32px`
+- **Center:** Plain buttons — *"Features"* (+ `ChevronDown`), *"Solutions"*, *"Plans"*, *"Learning"* (+ `ChevronDown`) — `text-foreground/90 text-base gap-1`
+- **Right:** `heroSecondary` variant `<Button size="sm">` — *"Sign Up"* · `rounded-full px-4 py-2`
+- Below navbar: full-width 1px gradient divider — `mt-[3px] h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent`
+
+### Hero Section
+- `<section>` with `bg-background relative overflow-hidden`
+- Navbar + divider at the top
+
+**Headline**
+- Text: *"Grow"*
+- Font: General Sans · weight normal · `text-[230px]` · `leading-[1.02]` · `tracking-[-0.024em]`
+- Style: `bg-clip-text text-transparent` with `background-image: linear-gradient(223deg, #E8E8E9 0%, #3A7BBF 104.15%)`
+
+**Subtext**
+- `text-hero-sub text-center text-lg leading-8 max-w-md mt-4 opacity-80`
+- Two lines (split with `<br>`): *"The most powerful AI ever deployed"* / *"in talent acquisition"*
+
+**CTA Button**
+- `heroSecondary` variant · label *"Schedule a Consult"* · `px-[29px] py-[24px]`
+- Wrapped in `<div className="mt-8 mb-[66px]">`
+
+### Social Proof / Video Section
+Immediately below the hero section — displays trust signals or background video content that reinforces the talent acquisition value proposition.
+
+### Logo Marquee
+- Infinite horizontal scroll using the custom `marquee` animation
+- Logos duplicated (2× set) so the loop is seamless at `translateX(-50%)`
+- Grayscale / low-opacity treatment to keep focus on headline

@@ -59,6 +59,7 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 4 | ClearInvoice — SaaS Hero | React (Vite) · Tailwind CSS · hls.js | [Preview →](https://clear-invoice-hero.lovable.app/) |
 | 5 | Synapse — Innovation Hero | React · Tailwind CSS · Framer Motion · hls.js | [Preview →](https://video-hero-section.vercel.app/) |
 | 6 | Automotive Dealership Hero | React · Tailwind CSS · Google Fonts | [Preview →](https://hero-drive-dream.lovable.app/) |
+| 7 | Ethereal Glow — Talent Acquisition Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://ethereal-glow-hero.lovable.app) |
 
 ---
 
