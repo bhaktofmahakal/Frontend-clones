@@ -19,6 +19,7 @@
 | 9 | [Vex — Modern SaaS Landing](#9-vex--modern-saas-landing) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
 | 10 | [CodeNest — Coding Education Hero](#10-codenest--coding-education-hero) | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
 | 11 | [Gaze Aether — Data Insights Hero](#11-gaze-aether--data-insights-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
+| 12 | [SkyElite — Private Jet Hero](#12-skyelite--private-jet-hero) | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
 
 ---
 
@@ -830,3 +831,57 @@ Create a modern hero section with a looping video background and the following s
 - Hero content container (centered, max-width constraints)
 - Nested components for badge, header, and search input
 - All elements positioned over full-screen video background
+
+---
+
+## 12. SkyElite — Private Jet Hero
+
+**🔗 Live Preview:** [skyelite-landing-dream.lovable.app](https://skyelite-landing-dream.lovable.app/)
+
+**🛠 Tech Stack:** React · TypeScript · Tailwind CSS · Lucide React
+
+### Layout & Background
+- Outer container: `min-h-screen`, `bg-gray-50`
+- Hero section: `relative`, `h-screen`, `overflow-hidden`
+- Full-viewport video background (`h-screen`, `object-cover`)
+  - URL: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_091828_e240eb17-6edc-4129-ad9d-98678e3fd238.mp4`
+  - Attributes: `autoPlay`, `muted`, `loop`, `playsInline`
+
+### Navigation Bar
+- Max-width `7xl`, centered with `px-8 py-6`
+- **Left:** Brand name "SkyElite" — `text-2xl`, `font-semibold`, `text-gray-900`
+- **Center (desktop only, `md:flex`, hidden on mobile):** `Start` · `Story` · `Rates` · `Benefits` · `FAQ`
+  - Links: `text-gray-900`, `hover:text-gray-700`, `transition-colors`
+- **Right (mobile):** Hamburger toggle using Lucide React `Menu` / `X` icons
+- Mobile dropdown: white/95 opacity (`bg-white/95`), `backdrop-blur`, rounded corners, shadow, stacked nav links
+
+### Hero Content
+- Content wrapper: `relative`, `h-full`, `flex flex-col`
+- Main area: `flex-1`, `flex items-center justify-center`
+- Inner block: centered, `-mt-80` (pulls content upward)
+
+| Element | Detail |
+|---------|--------|
+| **Label** | `"PRIVATE JETS"` — `text-sm`, `font-semibold`, `text-gray-600`, `tracking-wider`, `mb-4`, uppercase |
+| **Headline Line 1** | `"Premium."` — `text-6xl md:text-7xl lg:text-8xl`, `font-normal`, `text-gray-500`, `leading-none`, `tracking-tighter` |
+| **Headline Line 2** | `"Accessible."` — same size, color `#202A36`, `margin-top: -12px` (negative overlap with line 1) |
+| **Subtitle** | `"Your dedication deserves recognition."` — `text-lg md:text-xl`, `text-gray-600`, `mb-6`, `max-w-2xl` |
+| **CTA Buttons** | Side-by-side, `gap-4`, centered |
+
+### CTA Buttons
+| Button | Style |
+|--------|-------|
+| **"Discover"** | `px-4 py-2`, `rounded-full`, `bg-gray-300`, `text-gray-800`, `font-medium`, `hover:bg-gray-400`, `transition-colors` |
+| **"Book Now"** | `px-4 py-2`, `rounded-full`, `text-white`, `bg-[#202A36]`, `hover:bg-[#1a2229]`, `transition-colors` |
+
+### Typography
+- Font: **Inter** (Google Fonts — weights 400, 500, 600, 700)
+- Applied globally to `body` via CSS import
+
+### Technical Details
+- React with TypeScript
+- Tailwind CSS for all styling
+- Lucide React for `Menu` / `X` hamburger icons
+- `useState` hook for mobile menu open/close toggle
+- Responsive breakpoints: mobile-first → `md` → `lg`
+- All interactive transitions use `transition-colors`
