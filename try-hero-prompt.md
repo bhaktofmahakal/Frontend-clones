@@ -17,6 +17,7 @@
 | 7 | [Ethereal Glow — Talent Acquisition Hero](#7-ethereal-glow--talent-acquisition-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://ethereal-glow-hero.lovable.app) |
 | 8 | [Velorah — Cinematic Video Hero](#8-velorah--cinematic-video-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://velorah.lovable.app/) |
 | 9 | [Vex — Modern SaaS Landing](#9-vex--modern-saas-landing) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
+| 10 | [CodeNest — Coding Education Hero](#10-codenest--coding-education-hero) | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
 
 ---
 
@@ -638,3 +639,67 @@ Use `whileInView` + `viewport={{ once: true, margin: "-100px" }}` for scroll-tri
 - Navbar collapses to hamburger below `md`
 - Dashboard preview hidden below `sm`, shown from `sm` upward
 - All horizontal flex rows fall back to `flex-col` on mobile
+
+---
+
+## 10. CodeNest — Coding Education Hero
+
+**🔗 Live Preview:** [glow-glass-code.lovable.app](https://glow-glass-code.lovable.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS · hls.js · lucide-react
+
+### Prompt
+
+Create a high-end, dark-themed hero section for a coding education platform called 'CodeNest' using React and Tailwind CSS. The design must be responsive and follow these precise specifications:
+
+1. Background & Layout:
+
+Background: Implement a full-screen background video using the HLS stream: https://stream.mux.com/tLkHO1qZoaaQOUeVWo8hEBeGQfySP02EPS02BmnNFyXys.m3u8. Use hls.js and set enableWorker: false to ensure stability in sandboxed environments.
+
+Overlays: Set the video to 60% opacity. Add a dark linear gradient from the left (#070b0a to transparent) and a bottom-up gradient for readability.
+
+Grid System: Add three thin vertical grid lines (white/10 opacity) at the 25%, 50%, and 75% marks across the screen (visible on desktop).
+
+Central Glow: Place a large horizontal SVG ellipse glow in the center-top area with a cyan/dark green hue, using a 25px Gaussian blur filter.
+
+2. The Liquid Glass Card:
+
+Component: Create a 200x200px floating card positioned above the main headline, shifted exactly 50px upwards using translate-y-[-50px].
+
+CSS Styling (Liquid Glass):
+
+background: rgba(255, 255, 255, 0.01) with background-blend-mode: luminosity.
+
+backdrop-filter: blur(4px).
+
+box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1).
+
+Border Effect: A ::before pseudo-element with inset: 0, padding: 1.4px, and a 180-degree white linear gradient. Use -webkit-mask-composite: xor and mask-composite: exclude to create a sharp, high-end border frame.
+
+Content: '[ 2025 ]' tag (14px), 'Taught by Industry Professionals' headline (18px, using Instrument Serif italic for 'Industry'), and a small description (11px).
+
+3. Hero Content & Typography:
+
+Eyebrow: 'Career-Ready Curriculum' in Plus Jakarta Sans, bold, 11px, color #5ed29c.
+
+Main Headline: 'LAUNCH YOUR CODING CAREER.' in Inter Extra Bold, uppercase, tracking-tight. Scale from 40px (mobile) to 72px (desktop). The final period must be green (#5ed29c).
+
+Description: 'Master in-demand coding skills...' in Inter, 14px, 70% white opacity, max-width 512px.
+
+Primary CTA: 'Get Started' button with an ArrowRight icon. Rounded-full, background #5ed29c, text #070b0a, uppercase, bold.
+
+4. Global Navigation:
+
+Header: Sticky/Absolute header with a white minimalist logo.
+
+Desktop Menu: Links for 'PROJECTS', 'BLOG', 'ABOUT', 'RESUME' in Inter, 16px. Hover state: #5ed29c.
+
+Mobile Menu: A functional hamburger menu that toggles a full-screen dark overlay.
+
+5. Required Imports:
+
+Fonts: Inter, Plus Jakarta Sans, and Instrument Serif (italic).
+
+Icons: lucide-react (ArrowRight, Menu, X).
+
+Library: hls.js for video streaming.
