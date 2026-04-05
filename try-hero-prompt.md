@@ -23,6 +23,7 @@
 | 13 | [Liquid Whisper Art — Cinematic Full-Page Landing](#13-liquid-whisper-art--cinematic-full-page-landing) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
 | 14 | [SkyElite — Private Jet Hero](#14-skyelite--private-jet-hero) | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
 | 15 | [Stellar.ai — AI Landing Hero](#15-stellarai--ai-landing-hero) | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
+| 16 | [Aethera Vision Forge — Cinematic Hero](#16-aethera-vision-forge--cinematic-hero) | React · Vite · Tailwind CSS · TypeScript | [Preview →](https://aethera-vision-forge.lovable.app/) |
 
 ---
 
@@ -1371,3 +1372,88 @@ All scroll-triggered animations use `useInView(ref, { once: true, margin: '-100p
 
 - `mt-24 flex` row
 - Logos: **INTERSCOPE**, **SPOTIFY**, **Nexera** (dot-grid icon), **M3** (serif italic), **LAURA COLE** (LC circle monogram), **vertex** (dots)
+
+---
+
+## 16. Aethera Vision Forge — Cinematic Hero
+
+**🔗 Live Preview:** [aethera-vision-forge.lovable.app](https://aethera-vision-forge.lovable.app/)
+
+**🛠 Tech Stack:** React · Vite · Tailwind CSS · TypeScript
+
+### Fonts (`/src/styles/fonts.css`)
+
+| Role | Font |
+|------|------|
+| Display (headings, logo) | **Instrument Serif** |
+| Body (navigation, descriptions) | **Inter** |
+
+### Layout Structure
+
+- Container: `relative min-h-screen w-full overflow-hidden`, white background (`#FFFFFF`)
+- Layers (bottom to top): video background (z-0) → gradient overlays → navigation bar (z-10) → hero content (z-10)
+
+### Video Background
+
+- URL: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4`
+- Position: `top: '300px'`, `inset: 'auto 0 0 0'`
+- Custom fade-in/fade-out loop logic via `useEffect` + `useRef`:
+  - `requestAnimationFrame` continuously monitors `currentTime` and `duration`
+  - Fade **in** over 0.5 s at start (opacity 0 → 1)
+  - Fade **out** over 0.5 s before end (opacity 1 → 0)
+  - On `ended` event: set opacity to 0 → wait 100 ms → reset `currentTime = 0` → call `play()` again
+- Gradient overlays: `absolute inset-0 bg-gradient-to-b from-background via-transparent to-background` positioned over the video
+
+### Navigation Bar
+
+| Element | Detail |
+|---------|--------|
+| **Logo** | "Aethera®" — `<sup>®</sup>`, `text-3xl tracking-tight`, Instrument Serif, color `#000000` |
+| **Menu items** | Home (`#000000`), Studio, About, Journal, Reach Us (`#6F6F6F`), `text-sm transition-colors` |
+| **CTA button** | "Begin Journey" — `rounded-full px-6 py-2.5 text-sm`, background `#000000`, text `#FFFFFF`, `hover:scale-[1.03]` |
+| **Layout** | `flex justify-between px-8 py-6 max-w-7xl mx-auto` |
+
+### Hero Section
+
+- Positioning: `paddingTop: 'calc(8rem - 75px)'`, `pb-40`
+- Layout: `flex flex-col items-center justify-center text-center px-6`
+
+#### Headline
+
+- Text: "Beyond silence, we build the eternal."
+- Styling: `text-5xl sm:text-7xl md:text-8xl max-w-7xl font-normal`
+- Font: Instrument Serif
+- Line height: `0.95` · Letter spacing: `-2.46px`
+- Colors: main text `#000000`; italic words "silence," and "the eternal." in `#6F6F6F`
+- Animation: `animate-fade-rise`
+
+#### Description
+
+- Text: "Building platforms for brilliant minds, fearless makers, and thoughtful souls. Through the noise, we craft digital havens for deep work and pure flows."
+- Styling: `text-base sm:text-lg max-w-2xl mt-8 leading-relaxed`
+- Color: `#6F6F6F`
+- Animation: `animate-fade-rise-delay`
+
+#### CTA Button
+
+- Text: "Begin Journey"
+- Styling: `rounded-full px-14 py-5 text-base mt-12`
+- Background `#000000` · text `#FFFFFF` · `hover:scale-[1.03]`
+- Animation: `animate-fade-rise-delay-2`
+
+### Color Palette
+
+| Role | Color |
+|------|-------|
+| Background | `#FFFFFF` |
+| Headlines / logo / buttons | `#000000` |
+| Descriptions / secondary menu items | `#6F6F6F` |
+| Button text | `#FFFFFF` |
+
+### Animations (`/src/styles/theme.css`)
+
+| Class | Keyframes | Duration | Delay |
+|-------|-----------|----------|-------|
+| `animate-fade-rise` | `opacity: 0; translateY(20px)` → `opacity: 1; translateY(0)` | 0.8 s ease-out | — |
+| `animate-fade-rise-delay` | same as above | 0.8 s ease-out | 0.2 s |
+| `animate-fade-rise-delay-2` | same as above | 0.8 s ease-out | 0.4 s |
