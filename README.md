@@ -73,6 +73,7 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 17 | Nexora — SaaS Landing Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion · lucide-react | [Preview →](https://nexora-landing.lovable.app/) |
 | 18 | Remoto — Remote Team Management Hero | React · Tailwind CSS v4 · Motion | [Preview →](https://remoto-mbn.lovable.app/) |
 | 19 | Swift Spark Aesthetics — AI Website Builder Hero | React · Tailwind CSS · TypeScript · Motion · hls.js · lucide-react | [Preview →](https://swift-spark-aesthetics.lovable.app/) |
+| 20 | Crest AI — AI Automation Hero | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js | [Preview →](https://crest-ai-reach.lovable.app/) |
 
 ---
 

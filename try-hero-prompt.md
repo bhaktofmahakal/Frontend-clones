@@ -27,6 +27,7 @@
 | 17 | [Nexora — SaaS Landing Hero](#17-nexora--saas-landing-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion · lucide-react | [Preview →](https://nexora-landing.lovable.app/) |
 | 18 | [Remoto — Remote Team Management Hero](#18-remoto--remote-team-management-hero) | React · Tailwind CSS v4 · Motion | [Preview →](https://remoto-mbn.lovable.app/) |
 | 19 | [Swift Spark Aesthetics — AI Website Builder Hero](#19-swift-spark-aesthetics--ai-website-builder-hero) | React · Tailwind CSS · TypeScript · Motion · hls.js · lucide-react | [Preview →](https://swift-spark-aesthetics.lovable.app/) |
+| 20 | [Crest AI — AI Automation Hero](#20-crest-ai--ai-automation-hero) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js | [Preview →](https://crest-ai-reach.lovable.app/) |
 
 ---
 
@@ -1690,6 +1691,136 @@ Staggered **fade and slide up** entrance for each element:
 | Content padding-top | `290px` |
 | Heading letter-spacing | `-0.04em` |
 | "management" font size | `100px` (Instrument Serif italic) |
+
+---
+
+## 20. Crest AI — AI Automation Hero
+
+**🔗 Live Preview:** [crest-ai-reach.lovable.app](https://crest-ai-reach.lovable.app/)
+
+**🛠 Tech Stack:** React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js
+
+### Layout & Structure
+
+- Full viewport height (`h-screen`), full width, `relative`, `overflow-hidden`
+- Background color: `#070612` (dark purple-black)
+- Content aligned to the **left side**, vertically centered (`flex items-center`)
+- Max-width container: `max-w-7xl` with `px-6 lg:px-12` horizontal padding
+- Content sits at `z-20` above the video and gradient overlay
+
+### Background Video
+
+| Property | Value |
+|----------|-------|
+| **Source** | HLS stream — `https://stream.mux.com/s8pMcOvMQXc4GD6AX4e1o01xFogFxipmuKltNfSYza0200.m3u8` |
+| **Attributes** | `autoPlay loop muted playsInline` |
+| **Position** | `absolute`, full height, `z-0` |
+| **Horizontal offset** | `marginLeft: 200px` (shifted right) |
+| **Scale** | `scale-[1.2]`, `origin-left` |
+| **Fit** | `object-cover`, `h-full` |
+
+- Parsed with **hls.js** (`Hls.isSupported()` check with native fallback for Safari)
+
+#### Bottom Fade Gradient
+
+- `absolute bottom-0 left-0 right-0 h-40`, `z-10`
+- `background: linear-gradient(to top, #070612, transparent)`
+
+### Badge
+
+| Property | Value |
+|----------|-------|
+| **Shape** | `rounded-full`, `border border-white/20`, `backdrop-blur-sm` |
+| **Icon** | `Sparkles` from lucide-react, `w-3 h-3 text-white/80` |
+| **Text** | `"New AI Automation Ally"` — `text-sm font-medium text-white/80` |
+| **Animation** | BlurIn — opacity `0→1`, blur `10px→0`, `y: 20→0`, duration `0.6s`, no delay |
+
+### Main Heading
+
+- Three lines:
+  - Line 1: `"Unlock the Power of AI"` — `display: block`
+  - Line 2: `"for Your"` — inline
+  - Line 3: `"Business."` — inline, **serif italic** font
+- Sizes: `text-4xl md:text-5xl lg:text-6xl`
+- Weight: `font-medium`
+- Line height: `leading-tight lg:leading-[1.2]`
+- Color: `text-foreground` (white)
+
+#### SplitText Animation
+
+- Text is split **by words**
+- Each word animates independently: `opacity: 0→1`, `y: 40→0`
+- Stagger: `0.08s` between each word
+- Duration per word: `0.6s`
+- Implemented via a `SplitText` component using `framer-motion`
+
+### Subtitle
+
+| Property | Value |
+|----------|-------|
+| **Text** | `"Our cutting-edge AI platform automates, analyzes, and accelerates your workflows so you can focus on what really matters."` |
+| **Style** | `text-white/80 text-lg font-normal leading-relaxed max-w-xl` |
+| **Animation** | BlurIn — delay `0.4s`, duration `0.6s` |
+
+### CTA Buttons
+
+Layout: `flex flex-wrap gap-4`
+
+| Button | Style | Text | Link |
+|--------|-------|------|------|
+| **Primary** | `bg-foreground text-background rounded-full px-5 py-3` + `ArrowRight` icon (lucide-react) | `"Book A Free Call"` | `/book-call` |
+| **Secondary** | `bg-white/20 backdrop-blur-sm rounded-full px-8 py-3 text-white` | `"Learn now"` | — |
+
+- Both buttons animated with BlurIn — delay `0.6s`, duration `0.6s`
+
+### Animation Components
+
+#### `BlurIn`
+
+Uses `framer-motion` `motion.div`:
+
+```
+initial: { opacity: 0, filter: "blur(10px)", y: 20 }
+animate: { opacity: 1, filter: "blur(0px)", y: 0 }
+transition: { duration, delay }
+```
+
+#### `SplitText`
+
+- Splits heading string by spaces into individual word `<span>` elements
+- Each `<span>` wrapped in a `motion.span` with:
+
+```
+initial: { opacity: 0, y: 40 }
+animate: { opacity: 1, y: 0 }
+transition: { duration: 0.6, delay: index * 0.08 }
+```
+
+### Z-index Layering
+
+| Layer | Z-index |
+|-------|---------|
+| Background video | `z-0` |
+| Bottom fade gradient | `z-10` |
+| Hero content | `z-20` |
+
+### Spacing
+
+| Gap | Between |
+|-----|---------|
+| `gap-12` | Badge+heading group ↔ CTA buttons |
+| `gap-6` | Badge ↔ heading |
+| `gap-6` | Heading ↔ subtitle |
+
+### Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| `framer-motion` | BlurIn and SplitText animations |
+| `lucide-react` | `Sparkles` and `ArrowRight` icons |
+| `hls.js` | HLS video stream playback |
+| `tailwindcss` | Utility styling |
+
 ---
 
 ## 19. Swift Spark Aesthetics — AI Website Builder Hero
