@@ -17,7 +17,9 @@
 | 7 | [Ethereal Glow — Talent Acquisition Hero](#7-ethereal-glow--talent-acquisition-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://ethereal-glow-hero.lovable.app) |
 | 8 | [Velorah — Cinematic Video Hero](#8-velorah--cinematic-video-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://velorah.lovable.app/) |
 | 9 | [Vex — Modern SaaS Landing](#9-vex--modern-saas-landing) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
-| 10 | [Liquid Whisper Art — Cinematic Full-Page Landing](#10-liquid-whisper-art--cinematic-full-page-landing) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
+| 10 | [CodeNest — Coding Education Hero](#10-codenest--coding-education-hero) | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
+| 11 | [Gaze Aether — Data Insights Hero](#11-gaze-aether--data-insights-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
+| 12 | [Liquid Whisper Art — Cinematic Full-Page Landing](#12-liquid-whisper-art--cinematic-full-page-landing) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
 
 ---
 
@@ -642,7 +644,197 @@ Use `whileInView` + `viewport={{ once: true, margin: "-100px" }}` for scroll-tri
 
 ---
 
-## 10. Liquid Whisper Art — Cinematic Full-Page Landing
+## 10. CodeNest — Coding Education Hero
+
+**🔗 Live Preview:** [glow-glass-code.lovable.app](https://glow-glass-code.lovable.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS · hls.js · lucide-react
+
+### Prompt
+
+Create a high-end, dark-themed hero section for a coding education platform called 'CodeNest' using React and Tailwind CSS. The design must be responsive and follow these precise specifications:
+
+1. Background & Layout:
+
+Background: Implement a full-screen background video using the HLS stream: https://stream.mux.com/tLkHO1qZoaaQOUeVWo8hEBeGQfySP02EPS02BmnNFyXys.m3u8. Use hls.js and set enableWorker: false to ensure stability in sandboxed environments.
+
+Overlays: Set the video to 60% opacity. Add a dark linear gradient from the left (#070b0a to transparent) and a bottom-up gradient for readability.
+
+Grid System: Add three thin vertical grid lines (white/10 opacity) at the 25%, 50%, and 75% marks across the screen (visible on desktop).
+
+Central Glow: Place a large horizontal SVG ellipse glow in the center-top area with a cyan/dark green hue, using a 25px Gaussian blur filter.
+
+2. The Liquid Glass Card:
+
+Component: Create a 200x200px floating card positioned above the main headline, shifted exactly 50px upwards using translate-y-[-50px].
+
+CSS Styling (Liquid Glass):
+
+background: rgba(255, 255, 255, 0.01) with background-blend-mode: luminosity.
+
+backdrop-filter: blur(4px).
+
+box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1).
+
+Border Effect: A ::before pseudo-element with inset: 0, padding: 1.4px, and a 180-degree white linear gradient. Use -webkit-mask-composite: xor and mask-composite: exclude to create a sharp, high-end border frame.
+
+Content: '[ 2025 ]' tag (14px), 'Taught by Industry Professionals' headline (18px, using Instrument Serif italic for 'Industry'), and a small description (11px).
+
+3. Hero Content & Typography:
+
+Eyebrow: 'Career-Ready Curriculum' in Plus Jakarta Sans, bold, 11px, color #5ed29c.
+
+Main Headline: 'LAUNCH YOUR CODING CAREER.' in Inter Extra Bold, uppercase, tracking-tight. Scale from 40px (mobile) to 72px (desktop). The final period must be green (#5ed29c).
+
+Description: 'Master in-demand coding skills...' in Inter, 14px, 70% white opacity, max-width 512px.
+
+Primary CTA: 'Get Started' button with an ArrowRight icon. Rounded-full, background #5ed29c, text #070b0a, uppercase, bold.
+
+4. Global Navigation:
+
+Header: Sticky/Absolute header with a white minimalist logo.
+
+Desktop Menu: Links for 'PROJECTS', 'BLOG', 'ABOUT', 'RESUME' in Inter, 16px. Hover state: #5ed29c.
+
+Mobile Menu: A functional hamburger menu that toggles a full-screen dark overlay.
+
+5. Required Imports:
+
+Fonts: Inter, Plus Jakarta Sans, and Instrument Serif (italic).
+
+Icons: lucide-react (ArrowRight, Menu, X).
+
+Library: hls.js for video streaming.
+
+---
+
+## 11. Gaze Aether — Data Insights Hero
+
+**🔗 Live Preview:** [gaze-aether.lovable.app](https://gaze-aether.lovable.app/)
+
+**🛠 Tech Stack:** React · Vite · Tailwind CSS · TypeScript · shadcn/ui
+
+### Prompt
+
+Create a modern hero section with a looping video background and the following specifications:
+
+#### Video Background
+
+- **URL:** `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260329_050842_be71947f-f16e-4a14-810c-06e83d23ddb5.mp4`
+- **Size:** 115% width and height
+- **Position:** Centered horizontally, anchored to top with `object-top` focal point
+
+#### Custom JavaScript Fade System (NO CSS transitions)
+
+- 250ms `requestAnimationFrame`-based fade-in on load/loop start
+- 250ms fade-out when 0.55 seconds remain before video end
+- `fadingOutRef` boolean prevents re-triggering fade-out from repeated `timeUpdate` events
+- On `ended`: opacity set to 0, 100ms delay, reset `currentTime = 0`, play, fade back in
+- Each new fade cancels running animation frames to prevent competing animations
+- Fades resume from current opacity (no snapping)
+
+#### Fonts Required
+
+- Schibsted Grotesk (weights: 400, 500, 600, 700)
+- Inter (weights: 400, 500, 600, 700)
+- Noto Sans (weights: 400, 500, 600, 700)
+- Fustat (weights: 400, 500, 600, 700)
+
+#### Navigation Bar
+
+- **Logo:** "Logoipsum" (Schibsted Grotesk SemiBold, 24px, -1.44px tracking)
+- **Menu items** (Schibsted Grotesk Medium, 16px, -0.2px tracking):
+  - Platform
+  - Features (with dropdown chevron icon)
+  - Projects
+  - Community
+  - Contact
+- **Right side buttons:**
+  - "Sign Up" (transparent background, 82px width)
+  - "Log In" (black background, white text, 101px width)
+- **Padding:** 120px horizontal, 16px vertical
+
+#### Hero Content (moved up 50px with `-mt-[50px]`)
+
+**Badge Component:**
+- Dark badge with star icon + "New" text
+- Light background with text: "Discover what's possible"
+- Font: Inter Regular, 14px
+- Rounded corners with subtle shadow
+
+**Main Headline:**
+- Text: "Transform Data Quickly"
+- Font: Fustat Bold, 80px, -4.8px tracking, `line-height: none`
+- Color: Black, center-aligned
+
+**Subtitle:**
+- Text: "Upload your information and get powerful insights right away. Work smarter and achieve goals effortlessly."
+- Font: Fustat Medium, 20px, -0.4px tracking
+- Color: #505050
+- Max-width: 736px, width: 542px
+
+**Search Input Box:**
+- Backdrop blur with dark transparent background (`rgba(0,0,0,0.24)`)
+- Dimensions: 728px max-width, 200px height, rounded 18px
+- **Top row:** Credit info
+  - Left: "60/450 credits" with green "Upgrade" button
+  - Right: AI icon + "Powered by GPT-4o"
+  - Font: Schibsted Grotesk Medium, 12px, white text
+- **Main input area:**
+  - White background, rounded 12px, shadow
+  - Placeholder: "Type question..." (16px, `rgba(0,0,0,0.6)`)
+  - Black circular submit button with up-arrow icon (36px)
+- **Bottom row:**
+  - Left: Three action buttons (gray backgrounds, rounded 6px):
+    - "Attach" with paperclip icon
+    - "Voice" with microphone icon
+    - "Prompts" with search icon
+  - Right: Character counter "0/3,000" (12px, gray)
+
+#### Icons (SVG paths from imported file)
+
+- Chevron down arrow
+- Up arrow
+- Star icon
+- AI sparkle icon
+- Attach / paperclip icon
+- Voice / microphone icon
+- Search icon
+
+#### Spacing
+
+| Pair | Gap |
+|------|-----|
+| Navigation → Hero content | 60px |
+| Header → Search box | 44px |
+| Badge → Title | 34px |
+| Title → Subtitle | 34px |
+| Hero content negative top margin | -50px |
+| Horizontal padding | 120px |
+
+#### Color Scheme
+
+| Token | Value |
+|-------|-------|
+| Black text | `#000000` |
+| Gray text | `#505050` |
+| Light gray backgrounds | `#f8f8f8` |
+| Green upgrade button | `rgba(90, 225, 76, 0.89)` |
+| White | `#ffffff` |
+| Transparent overlay | `rgba(0, 0, 0, 0.24)` |
+| Dark badge | `#0e1311` |
+
+#### Component Structure
+
+- `VideoBackground` component with custom fade logic
+- Navigation bar (fixed spacing, horizontal layout)
+- Hero content container (centered, max-width constraints)
+- Nested components for badge, header, and search input
+- All elements positioned over full-screen video background
+
+---
+
+## 12. Liquid Whisper Art — Cinematic Full-Page Landing
 
 **🔗 Live Preview:** [liquid-whisper-art.lovable.app](https://liquid-whisper-art.lovable.app/)
 
