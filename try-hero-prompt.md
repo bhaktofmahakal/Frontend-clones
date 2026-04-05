@@ -19,6 +19,7 @@
 | 9 | [Vex — Modern SaaS Landing](#9-vex--modern-saas-landing) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
 | 10 | [CodeNest — Coding Education Hero](#10-codenest--coding-education-hero) | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
 | 11 | [Gaze Aether — Data Insights Hero](#11-gaze-aether--data-insights-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
+| 12 | [Stellar.ai — AI Landing Hero](#12-stellarai--ai-landing-hero) | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
 
 ---
 
@@ -830,3 +831,83 @@ Create a modern hero section with a looping video background and the following s
 - Hero content container (centered, max-width constraints)
 - Nested components for badge, header, and search input
 - All elements positioned over full-screen video background
+
+---
+
+## 12. Stellar.ai — AI Landing Hero
+
+**🔗 Live Preview:** [stellar-bool.lovable.app](https://stellar-bool.lovable.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS · Lucide React · Google Fonts (Inter)
+
+### Layout & Background
+
+- White background (`bg-white`)
+- Max-width container: `max-w-7xl mx-auto`
+- All major sections use `.animate-fade-in-up` with staggered `animationDelay` (starting at 0.1s, incrementing by 0.1s) and `opacity: 0` inline style
+
+### Custom CSS Animations (`index.css`)
+
+| Class | Keyframes | Duration |
+|-------|-----------|----------|
+| `.animate-fade-in-up` | `opacity: 0; translateY(30px)` → `opacity: 1; translateY(0)` | 0.6s ease-out forwards |
+| `.animate-fade-in-overlay` | `opacity: 0` → `opacity: 1` | 0.4s ease-out forwards |
+| `.animate-slide-up-overlay` | `opacity: 0` → `opacity: 1` + `transform: translate(-50%, -50%)` | 0.5s ease-out forwards |
+
+### Font
+
+- Import **Inter** (weights 400, 500, 600, 700) from Google Fonts
+- Set `font-family: 'Inter', sans-serif` on `body`
+
+### Navigation (`animationDelay: 0.1s`)
+
+- `px-6 py-4 flex items-center justify-between max-w-7xl mx-auto`
+- **Left:** Lucide `Star` icon (w-5 h-5, fill-black) + "Stellar.ai" (`text-lg font-semibold`)
+- **Center** (hidden on mobile, `hidden md:flex items-center gap-8`): "Solutions" + ChevronDown, "For Teams" + ChevronDown, "About Us", "Learn Hub" — `text-sm text-gray-700 hover:text-black`
+- **Right:** "Login" link (`text-sm text-gray-700`) + "Get started free" button (`bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors`)
+
+### Hero Section (`px-6 pt-24 pb-32 max-w-7xl mx-auto text-center`)
+
+#### Reviews Badge (`animationDelay: 0.2s`)
+- `inline-flex items-center gap-2 mb-8`
+- Bordered square (`w-6 h-6 border border-gray-300 rounded`) with filled `Star` icon inside
+- Text: "4.9 rating from 18.3K+ users" (`text-sm font-medium text-black`)
+
+#### Main Heading (`animationDelay: 0.3s`)
+- `text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight mb-5`
+- First line: "Work Smarter. Move Faster."
+- Second line: "AI Powers You Up." — gradient text (`bg-gradient-to-r from-black via-gray-500 to-gray-400 bg-clip-text text-transparent`)
+
+#### Subheading (`animationDelay: 0.4s`)
+- `text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto`
+- Text: "Intelligent automation syncs with the tools you love to streamline tasks, boost output, and save time."
+
+#### CTA Button (`animationDelay: 0.5s`)
+- `bg-black text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-colors mb-12`
+- Text: "Begin Free Trial"
+
+#### Tab Bar (`animationDelay: 0.6s`)
+- Centered `bg-gray-100 rounded-lg p-1` container
+- **Mobile** (`md:hidden`): 2×2 grid with 4 buttons: Analyse (BarChart3), Train (BookOpen), Testing (Users), Deploy (Rocket)
+- **Desktop** (`hidden md:flex`): Same 4 buttons in a row with vertical dividers (`w-px h-5 bg-gray-300`)
+- Active tab: `bg-white text-black shadow-sm` · Inactive: `text-gray-600`
+- Tabs auto-cycle every 4s with `setInterval`, state managed with `useState('analyse')`
+
+### Video + Overlay Section (`animationDelay: 0.7s`)
+
+- Container: `relative rounded-3xl overflow-hidden h-[400px] md:h-[500px]`
+- Video: `src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_165750_358b1e72-c921-48b7-aaac-f200994f32fb.mp4"`, `autoPlay loop muted playsInline w-full h-full object-cover`
+
+#### 4 Tab Overlays (`.animate-fade-in-overlay` outer · `.animate-slide-up-overlay` inner card)
+
+| Tab | Overlay Content |
+|-----|----------------|
+| **Analyse** | "Set Up Your AI Workspace" wizard · purple progress bar at 25% · 4 steps |
+| **Train** | "AI Model Training" · orange progress bar at 67% · 4 metrics |
+| **Testing** | "Test Suite Results" · green success indicator · 127/127 tests passed |
+| **Deploy** | "Deploy to Production" · 4 checklist items · "Deploy Now" button |
+
+### Company Logos (`animationDelay: 0.8s`)
+
+- `mt-24 flex` row
+- Logos: **INTERSCOPE**, **SPOTIFY**, **Nexera** (dot-grid icon), **M3** (serif italic), **LAURA COLE** (LC circle monogram), **vertex** (dots)
