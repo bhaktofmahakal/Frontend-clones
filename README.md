@@ -64,6 +64,7 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 8 | Velorah — Cinematic Video Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://velorah.lovable.app/) |
 | 9 | Vex — Modern SaaS Landing | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
 | 10 | CodeNest — Coding Education Hero | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
+| 11 | Gaze Aether — Data Insights Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
 
 ---
 
