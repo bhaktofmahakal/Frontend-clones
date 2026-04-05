@@ -19,7 +19,8 @@
 | 9 | [Vex — Modern SaaS Landing](#9-vex--modern-saas-landing) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
 | 10 | [CodeNest — Coding Education Hero](#10-codenest--coding-education-hero) | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
 | 11 | [Gaze Aether — Data Insights Hero](#11-gaze-aether--data-insights-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
-| 12 | [Stellar.ai — AI Landing Hero](#12-stellarai--ai-landing-hero) | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
+| 12 | [Liquid Whisper Art — Cinematic Full-Page Landing](#12-liquid-whisper-art--cinematic-full-page-landing) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
+| 13 | [Stellar.ai — AI Landing Hero](#13-stellarai--ai-landing-hero) | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
 
 ---
 
@@ -834,7 +835,240 @@ Create a modern hero section with a looping video background and the following s
 
 ---
 
-## 12. Stellar.ai — AI Landing Hero
+## 12. Liquid Whisper Art — Cinematic Full-Page Landing
+
+**🔗 Live Preview:** [liquid-whisper-art.lovable.app](https://liquid-whisper-art.lovable.app/)
+
+**🛠 Tech Stack:** React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react
+
+---
+
+### Global Setup
+
+**Font:** Instrument Serif (italic + regular) loaded via Google Fonts. Add to `index.css`:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+```
+
+**Background:** `bg-black` on `<body>` and every section.
+
+---
+
+### Liquid Glass CSS (`index.css`, inside `@layer components`)
+
+```css
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+```
+
+Apply `.liquid-glass` as a utility class on every glass element throughout the page.
+
+---
+
+### Section 1 — Hero (`src/pages/Index.tsx`)
+
+Full-screen container: `min-h-screen overflow-hidden relative flex flex-col bg-black`.
+
+#### Background Video
+
+- `absolute inset-0 w-full h-full object-cover object-bottom`
+- URL: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4`
+- Attributes: `muted autoPlay playsInline preload="auto"`
+- **Starts at `opacity: 0`** (set via ref style, not CSS)
+
+**Video fade logic (vanilla JS via refs, `requestAnimationFrame` — no CSS transitions):**
+
+| Event | Behaviour |
+|-------|-----------|
+| `canplay` | Call `.play()`, then animate opacity `0 → 1` over 500 ms via rAF |
+| `timeupdate` | When `duration - currentTime <= 0.55s`, animate opacity from current → `0` over 500 ms |
+| `ended` | Set opacity `0`, wait 100 ms, reset `currentTime = 0`, call `.play()`, fade back to `1` over 500 ms |
+
+This produces a seamless black-crossfade loop.
+
+#### Navbar (`relative z-20 px-6 py-6`)
+
+A `.liquid-glass rounded-full` pill: `max-w-5xl mx-auto px-6 py-3 flex items-center justify-between`.
+
+| Side | Content |
+|------|---------|
+| **Left** | `Globe` icon (24 px, white) + *"Asme"* (`text-white font-semibold text-lg`). Desktop only: nav links *"Features" · "Pricing" · "About"* (`text-white/80 hover:text-white text-sm font-medium gap-8 ml-8`) |
+| **Right** | *"Sign Up"* text button (`text-white text-sm font-medium`) + *"Login"* button (`.liquid-glass rounded-full px-6 py-2 text-white text-sm font-medium`) |
+
+#### Hero Content
+
+`relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[20%]`
+
+| Element | Spec |
+|---------|------|
+| **Heading** | `text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-nowrap` · font-family `'Instrument Serif', serif` · Text: `Know it then <em>all</em>.` |
+| **Email input** | `max-w-xl w-full`. Outer wrapper: `.liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3`. Input: `bg-transparent text-white placeholder:text-white/40`. Submit: `bg-white rounded-full p-3 text-black` with `ArrowRight` (20 px) |
+| **Subtitle** | `text-white text-sm leading-relaxed px-4` — *"Stay updated with the latest news and insights. Subscribe to our newsletter today and never miss out on exciting updates."* |
+| **Manifesto button** | `.liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors` |
+
+#### Social Icons Footer
+
+`relative z-10 flex justify-center gap-4 pb-12`
+
+Three `.liquid-glass rounded-full p-4` icon buttons: `Instagram`, `Twitter`, `Globe` (20 px each). Style: `text-white/80 hover:text-white hover:bg-white/5 transition-all`.
+
+---
+
+### Section 2 — About (`src/components/AboutSection.tsx`)
+
+Uses `framer-motion` `useInView(ref, { once: true, margin: '-100px' })`.
+
+`bg-black pt-32 md:pt-44 pb-10 md:pb-14 px-6 overflow-hidden`
+
+Subtle radial overlay: `bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.03)_0%,_transparent_70%)]`.
+
+| Element | Spec |
+|---------|------|
+| **Label** | *"About Us"* — `text-white/40 text-sm tracking-widest uppercase` · Animates `opacity 0→1, y 20→0` over 0.6 s |
+| **Heading** | `text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight` · Animates `opacity 0→1, y 40→0` over 0.8 s, delay 0.1 s |
+
+Heading text structure:
+```
+Pioneering then
+  <em>ideas</em> (Instrument Serif italic, text-white/60) for
+<br className="hidden md:block" />
+  <em>minds that then</em> create, build, and inspire. (Instrument Serif italic, text-white/60)
+```
+
+---
+
+### Section 3 — Featured Video (`src/components/FeaturedVideoSection.tsx`)
+
+`bg-black pt-6 md:pt-10 pb-20 md:pb-32 px-6 overflow-hidden`. Max width: `max-w-6xl mx-auto`.
+
+- Outer container animates `opacity 0→1, y 60→0` over 0.9 s.
+- Video wrapper: `rounded-3xl overflow-hidden aspect-video relative`.
+- Video: `w-full h-full object-cover` · `muted autoPlay loop playsInline preload="auto"`.
+- URL: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4`
+- Gradient overlay: `absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent`.
+
+**Bottom overlay** (`absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col md:flex-row items-end justify-between gap-4`):
+
+| Side | Content |
+|------|---------|
+| **Left** | `.liquid-glass rounded-2xl p-6 md:p-8 max-w-md`. Label *"Our Approach"* (`text-white/50 text-xs tracking-widest uppercase mb-3`). Body: *"We believe in the power of curiosity-driven exploration. Every project starts with a question, and every answer opens a new door to innovation."* (`text-white text-sm md:text-base leading-relaxed`) |
+| **Right** | `motion.button` — `.liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium` — *"Explore more"* · `whileHover={{ scale: 1.05 }}` · `whileTap={{ scale: 0.95 }}` |
+
+---
+
+### Section 4 — Philosophy (`src/components/PhilosophySection.tsx`)
+
+`bg-black py-28 md:py-40 px-6 overflow-hidden`. Max width: `max-w-6xl mx-auto`.
+
+**Heading:** `text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-16 md:mb-24` · animates `opacity 0→1, y 40→0` over 0.8 s.
+Text: `Innovation ` then `<em>x</em>` (Instrument Serif italic, `text-white/40`) then ` Vision`.
+
+**Two-column grid:** `grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12`
+
+| Column | Spec |
+|--------|------|
+| **Left** | `rounded-3xl overflow-hidden aspect-[4/3]` · animates from `opacity 0, x -40`. Video (`muted autoPlay loop playsInline preload="auto"`): `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4` |
+| **Right** | Animates from `opacity 0, x 40`. Two text blocks separated by `w-full h-px bg-white/10`. |
+
+Right column text blocks:
+
+**Block 1**
+- Label: *"Choose your space"* — `text-white/40 text-xs tracking-widest uppercase mb-4`
+- Body: *"Every meaningful breakthrough begins at the intersection of disciplined strategy and remarkable creative vision. We operate at that crossroads, turning bold thinking into tangible outcomes that move people and reshape industries."* — `text-white/70 text-base md:text-lg leading-relaxed`
+
+**Block 2**
+- Label: *"Shape the future"*
+- Body: *"We believe that the best work emerges when curiosity meets conviction. Our process is designed to uncover hidden opportunities and translate them into experiences that resonate long after the first impression."*
+
+---
+
+### Section 5 — Services (`src/components/ServicesSection.tsx`)
+
+`bg-black py-28 md:py-40 px-6 overflow-hidden`. Max width: `max-w-6xl mx-auto`.
+
+Subtle radial gradient: `bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.02)_0%,_transparent_60%)]`.
+
+**Header row** (`flex items-end justify-between mb-16 md:mb-24`): Animates `opacity 0→1, y 30→0` over 0.7 s.
+- Left: *"What we do"* — `text-3xl md:text-5xl text-white tracking-tight`
+- Right (desktop only): *"Our services"* — `text-white/40 text-sm`
+
+**Two-card grid:** `grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8`
+
+Each card: `.liquid-glass rounded-3xl overflow-hidden group` — animates `opacity 0→1, y 50→0` over 0.8 s, staggered by 0.15 s.
+
+Card structure:
+- **Video area:** `aspect-video overflow-hidden`. Video: `w-full h-full object-cover transition-transform duration-700 group-hover:scale-105`. Gradient overlay: `bg-gradient-to-t from-black/40 to-transparent`.
+- **Body** (`p-6 md:p-8`): tag label (`text-white/40 text-xs tracking-widest uppercase`), `ArrowUpRight` icon in `.liquid-glass rounded-full p-2`, title (`text-white text-xl md:text-2xl mb-3 tracking-tight`), description (`text-white/50 text-sm leading-relaxed`).
+
+| Card | Video URL | Tag | Title | Description |
+|------|-----------|-----|-------|-------------|
+| 1 | `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4` | Strategy | **Research & Insight** | *"We dig deep into data, culture, and human behavior to surface the insights that drive meaningful, lasting change."* |
+| 2 | `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4` | Craft | **Design & Execution** | *"From concept to launch, we obsess over every detail to deliver experiences that feel effortless and look extraordinary."* |
+
+---
+
+### Animations Summary (Framer Motion)
+
+All scroll-triggered animations use `useInView(ref, { once: true, margin: '-100px' })` or `whileInView` with `viewport={{ once: true }}`.
+
+| Section | Element | Animation |
+|---------|---------|-----------|
+| About | Label | `opacity 0→1, y 20→0`, 0.6 s |
+| About | Heading | `opacity 0→1, y 40→0`, 0.8 s, delay 0.1 s |
+| Featured Video | Container | `opacity 0→1, y 60→0`, 0.9 s |
+| Featured Video | *"Explore more"* button | `whileHover scale 1.05`, `whileTap scale 0.95` |
+| Philosophy | Heading | `opacity 0→1, y 40→0`, 0.8 s |
+| Philosophy | Left video column | `opacity 0→1, x -40→0` |
+| Philosophy | Right text column | `opacity 0→1, x 40→0` |
+| Services | Header | `opacity 0→1, y 30→0`, 0.7 s |
+| Services | Cards | `opacity 0→1, y 50→0`, 0.8 s, stagger 0.15 s |
+
+---
+
+### Responsiveness
+
+- Hero heading: `text-7xl` (mobile) → `text-8xl` (md) → `text-9xl` (lg)
+- About heading: `text-4xl` → `text-6xl` → `text-7xl`
+- Philosophy heading: `text-5xl` → `text-7xl` → `text-8xl`
+- Services header: `text-3xl` → `text-5xl`
+- Featured video overlay: `flex-col` (mobile) → `flex-row` (md)
+- Philosophy grid: 1 col (mobile) → 2 col (md)
+- Services grid: 1 col (mobile) → 2 col (md)
+- Navbar links hidden on mobile; social icons always visible
+
+---
+
+## 13. Stellar.ai — AI Landing Hero
 
 **🔗 Live Preview:** [stellar-bool.lovable.app](https://stellar-bool.lovable.app/)
 
