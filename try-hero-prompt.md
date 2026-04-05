@@ -26,7 +26,8 @@
 | 16 | [Aethera Vision Forge — Cinematic Hero](#16-aethera-vision-forge--cinematic-hero) | React · Vite · Tailwind CSS · TypeScript | [Preview →](https://aethera-vision-forge.lovable.app/) |
 | 17 | [Nexora — SaaS Landing Hero](#17-nexora--saas-landing-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion · lucide-react | [Preview →](https://nexora-landing.lovable.app/) |
 | 18 | [Remoto — Remote Team Management Hero](#18-remoto--remote-team-management-hero) | React · Tailwind CSS v4 · Motion | [Preview →](https://remoto-mbn.lovable.app/) |
-| 19 | [Crest AI — AI Automation Hero](#19-crest-ai--ai-automation-hero) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js | [Preview →](https://crest-ai-reach.lovable.app/) |
+| 19 | [Swift Spark Aesthetics — AI Website Builder Hero](#19-swift-spark-aesthetics--ai-website-builder-hero) | React · Tailwind CSS · TypeScript · Motion · hls.js · lucide-react | [Preview →](https://swift-spark-aesthetics.lovable.app/) |
+| 20 | [Crest AI — AI Automation Hero](#20-crest-ai--ai-automation-hero) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js | [Preview →](https://crest-ai-reach.lovable.app/) |
 
 ---
 
@@ -1690,9 +1691,10 @@ Staggered **fade and slide up** entrance for each element:
 | Content padding-top | `290px` |
 | Heading letter-spacing | `-0.04em` |
 | "management" font size | `100px` (Instrument Serif italic) |
+
 ---
 
-## 19. Crest AI — AI Automation Hero
+## 20. Crest AI — AI Automation Hero
 
 **🔗 Live Preview:** [crest-ai-reach.lovable.app](https://crest-ai-reach.lovable.app/)
 
@@ -1818,3 +1820,144 @@ transition: { duration: 0.6, delay: index * 0.08 }
 | `lucide-react` | `Sparkles` and `ArrowRight` icons |
 | `hls.js` | HLS video stream playback |
 | `tailwindcss` | Utility styling |
+
+---
+
+## 19. Swift Spark Aesthetics — AI Website Builder Hero
+
+**🔗 Live Preview:** [swift-spark-aesthetics.lovable.app](https://swift-spark-aesthetics.lovable.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS · TypeScript · Motion · hls.js · lucide-react
+
+### Required Packages
+
+| Package | Version |
+|---------|---------|
+| `motion` | 12.23.24 or later |
+| `hls.js` | 1.6.15 or later |
+| `lucide-react` | 0.487.0 or later |
+
+### Fonts
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap');
+```
+
+### Navbar
+
+- **Position:** Fixed, full width, `z-50`, fully transparent background (`bg-transparent`)
+- **Padding:** `px-6 py-4`, flexbox `items-center justify-between`
+
+| Section | Content |
+|---------|---------|
+| Left | Sunburst SVG icon (24×24 px, white) |
+| Center (md+) | Nav links: "Products" (+ ChevronDown), "Customer Stories", "Resources", "Pricing" — Instrument Sans, `text-sm font-medium text-white/80 hover:text-white gap-8` |
+| Right | "Book A Demo" link (hidden on small screens) · "Get Started" button (`bg-white text-black rounded-full px-5 py-2.5 font-semibold`) |
+
+### Hero Section
+
+**Container:**
+- `relative w-full min-h-screen overflow-hidden`
+- Background: `#000000`, text: white
+
+**Background Video (HLS.js):**
+
+```tsx
+import { useEffect, useRef } from "react";
+import Hls from "hls.js";
+
+const videoRef = useRef<HTMLVideoElement>(null);
+const videoSrc = "https://stream.mux.com/T6oQJQ02cQ6N01TR6iHwZkKFkbepS34dkkIc9iukgy400g.m3u8";
+
+useEffect(() => {
+  const video = videoRef.current;
+  if (!video) return;
+
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      video.play().catch((e) => console.log("Auto-play prevented:", e));
+    });
+    return () => {
+      hls.destroy();
+    };
+  } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    video.src = videoSrc;
+    video.addEventListener("loadedmetadata", () => {
+      video.play().catch((e) => console.log("Auto-play prevented:", e));
+    });
+  }
+}, []);
+```
+
+- Video attributes: `muted loop playsInline`
+- Class: `object-cover opacity-60`
+- Poster fallback: `https://images.unsplash.com/photo-1647356191320-d7a1f80ca777?...`
+
+**Overlays & Decorative Gradients:**
+
+| Layer | Spec |
+|-------|------|
+| Video overlay | `bg-black/60 backdrop-blur-[2px]` |
+| Top-left gradient | `top-[-20%] left-[20%]`, 600×600 px, `bg-blue-900/20 blur-[120px] mix-blend-screen` |
+| Bottom-right gradient | `bottom-[-10%] right-[20%]`, 500×500 px, `bg-indigo-900/20 blur-[120px] mix-blend-screen` |
+
+**Content Container:**
+- `max-w-5xl mx-auto text-center items-center z-10 mt-20 space-y-12`
+
+### Typography
+
+| Element | Font | Size | Notes |
+|---------|------|------|-------|
+| Pre-headline | Instrument Serif | `text-3xl` / `sm:text-5xl` / `lg:text-[48px]` | `leading-[1.1]`, white |
+| Main headline | Instrument Sans, `font-semibold` | `text-6xl` / `sm:text-8xl` / `lg:text-[136px]` | `leading-[0.9] tracking-tighter`, gradient `from-white via-white to-[#b4c0ff]`, `bg-clip-text text-transparent` |
+| Subheadline | Instrument Sans | `text-lg` / `sm:text-[20px]` | `leading-[1.65]`, `text-white/70`, `max-w-xl` |
+
+- Pre-headline text: `"Design at the speed of thought"`
+- Main headline text: `"Build Faster"`
+- Subheadline text: `"Create fully functional, SEO-optimized websites in seconds with our advanced AI engine."`
+
+### CTA Buttons
+
+**Primary — "Start Building Free":**
+- Layout: `pl-6 pr-2 py-2 rounded-full bg-white flex items-center gap-4`
+- Text: Instrument Sans, `font-medium text-lg`, color `#0a0400`
+- Arrow circle: 40×40 px, `bg-[#3054ff] hover:bg-[#2040e0] rounded-full flex items-center justify-center`
+- Icon: `ArrowRight` (lucide-react), white, 20×20 px
+- Hover: `shadow-[0_0_20px_rgba(255,255,255,0.3)] scale-105`
+
+**Secondary — "See Examples":**
+- Style: text link, `text-white/70 hover:text-white`
+- Background: `backdrop-blur-sm hover:bg-white/5`
+- Padding: `px-4 py-2 rounded-lg`
+- Icon: `ArrowRight` with `group-hover:translate-x-1 transition`
+
+**Button container:** `flex flex-col sm:flex-row gap-6 items-center`
+
+### Animations (Motion library)
+
+```tsx
+import { motion } from "motion/react";
+```
+
+| Element | Animation |
+|---------|-----------|
+| Pre-headline | `initial={{ opacity: 0, y: 20 }}` → `animate={{ opacity: 1, y: 0 }}` · `transition={{ duration: 0.6 }}` |
+| Main headline | `initial={{ opacity: 0, scale: 0.9 }}` → `animate={{ opacity: 1, scale: 1 }}` · `transition={{ delay: 0.2, duration: 0.6 }}` |
+| Subheadline | `initial={{ opacity: 0 }}` → `animate={{ opacity: 0.7 }}` · `transition={{ delay: 0.4, duration: 0.6 }}` |
+| Buttons | `initial={{ opacity: 0, y: 20 }}` → `animate={{ opacity: 1, y: 0 }}` · `transition={{ delay: 0.6, duration: 0.5 }}` |
+
+### Color Palette
+
+| Token | Value |
+|-------|-------|
+| Background | `#000000` |
+| Primary text | `white` |
+| Secondary text | `white/80`, `white/70` |
+| Primary button bg | `white` |
+| Primary button text | `#0a0400` |
+| Accent / arrow circle | `#3054ff` · hover `#2040e0` |
+| Headline gradient end | `#b4c0ff` |
+| Decorative gradients | `blue-900/20`, `indigo-900/20` |
