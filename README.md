@@ -65,6 +65,8 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 9 | Vex — Modern SaaS Landing | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
 | 10 | CodeNest — Coding Education Hero | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
 | 11 | Gaze Aether — Data Insights Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
+| 12 | Liquid Whisper Art — Cinematic Full-Page Landing | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
+| 13 | SkyElite — Private Jet Hero | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
 
 ---
 
