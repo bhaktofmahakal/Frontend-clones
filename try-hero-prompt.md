@@ -19,9 +19,10 @@
 | 9 | [Vex — Modern SaaS Landing](#9-vex--modern-saas-landing) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
 | 10 | [CodeNest — Coding Education Hero](#10-codenest--coding-education-hero) | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
 | 11 | [Gaze Aether — Data Insights Hero](#11-gaze-aether--data-insights-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
-| 12 | [Liquid Whisper Art — Cinematic Full-Page Landing](#12-liquid-whisper-art--cinematic-full-page-landing) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
-| 13 | [SkyElite — Private Jet Hero](#13-skyelite--private-jet-hero) | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
-| 14 | [Stellar.ai — AI Landing Hero](#14-stellarai--ai-landing-hero) | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
+| 12 | [Portfolio Boom — Dark Portfolio Landing](#12-portfolio-boom--dark-portfolio-landing) | React · Vite · Tailwind CSS · TypeScript · GSAP · Framer Motion · hls.js | [Preview →](https://portfolio-boom.lovable.app/) |
+| 13 | [Liquid Whisper Art — Cinematic Full-Page Landing](#13-liquid-whisper-art--cinematic-full-page-landing) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
+| 14 | [SkyElite — Private Jet Hero](#14-skyelite--private-jet-hero) | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
+| 15 | [Stellar.ai — AI Landing Hero](#15-stellarai--ai-landing-hero) | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
 
 ---
 
@@ -836,7 +837,177 @@ Create a modern hero section with a looping video background and the following s
 
 ---
 
-## 12. Liquid Whisper Art — Cinematic Full-Page Landing
+## 12. Portfolio Boom — Dark Portfolio Landing
+
+**🔗 Live Preview:** [portfolio-boom.lovable.app](https://portfolio-boom.lovable.app/)
+
+**🛠 Tech Stack:** React · Vite · Tailwind CSS · TypeScript · GSAP · Framer Motion · hls.js
+
+### Prompt
+
+Build a single-page dark portfolio landing page using React + Vite + Tailwind CSS + TypeScript + GSAP + Framer Motion + hls.js.
+
+---
+
+#### Global Design System
+
+##### Fonts
+Google Fonts import: Inter (300–700) and Instrument Serif (italic, 400).
+- `--font-body`: 'Inter', sans-serif → Tailwind `font-body`
+- `--font-display`: 'Instrument Serif', serif → Tailwind `font-display`
+
+##### CSS Custom Properties (HSL, no `hsl()` wrapper — Tailwind adds it)
+
+```css
+--bg: 0 0% 4%;
+--surface: 0 0% 8%;
+--text: 0 0% 96%;
+--muted: 0 0% 53%;
+--stroke: 0 0% 12%;
+--accent: 0 0% 96%;
+```
+
+##### Tailwind Custom Colors
+
+```js
+bg: "hsl(var(--bg))",
+surface: "hsl(var(--surface))",
+"text-primary": "hsl(var(--text))",
+muted: "hsl(var(--muted))",
+stroke: "hsl(var(--stroke))",
+```
+
+##### Accent Gradient
+`linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)` — used on logo ring, hover borders, progress bars. CSS utility class `.accent-gradient`.
+
+##### Custom Animations (in `index.css`)
+- `@keyframes scroll-down` — `translateY(-100%)` → `translateY(200%)`, 1.5s ease-in-out infinite
+- `@keyframes role-fade-in` — opacity 0 + `translateY(8px)` → opacity 1 + `translateY(0)`, 0.4s ease-out
+- `@keyframes gradient-shift` — `background-position 0% 50%` → `100% 50%` → `0% 50%`, 6s ease infinite (for animated gradient borders)
+
+##### Theme
+Forced dark theme — no light mode toggle. `body` gets `bg-bg text-text-primary`.
+
+---
+
+#### Page Structure (`Index.tsx`)
+
+- Show a full-screen `<LoadingScreen />` while `isLoading` is true; hide it once assets are ready.
+- After loading, render all sections in a single scrollable page:
+  1. `<Navbar />`
+  2. `<HeroSection />`
+  3. `<AboutSection />`
+  4. `<WorkSection />`
+  5. `<SkillsSection />`
+  6. `<ContactSection />`
+  7. `<Footer />`
+
+---
+
+#### Loading Screen (`LoadingScreen.tsx`)
+
+- Full-viewport overlay (`bg-bg`), centered content
+- Animated logo ring using the accent gradient (spinning border via `gradient-shift` animation)
+- Counter that counts up from 0 → 100% over ~2 seconds using `requestAnimationFrame`
+- Fade-out the overlay once counter reaches 100
+
+---
+
+#### Navbar (`Navbar.tsx`)
+
+- Fixed top, full-width, `backdrop-blur` + subtle `border-b border-stroke`
+- **Left:** Monogram logo (e.g. `JD`) inside a small circle with accent gradient ring
+- **Center:** Navigation links — About · Work · Skills · Contact — smooth-scroll on click
+- **Right:** `"Hire Me"` pill button with accent gradient border on hover
+- Hides/shows on scroll (slides up when scrolling down, slides back down when scrolling up) using GSAP ScrollTrigger
+
+---
+
+#### Hero Section (`HeroSection.tsx`)
+
+- Full-viewport height, centered content, `bg-bg`
+- **Name headline:** Large display text using `font-display` (Instrument Serif italic)
+- **Role ticker:** Cycles through an array of roles (e.g. "Frontend Developer", "UI Designer", "Creative Coder") using the `role-fade-in` animation; each role fades in and out on a timer
+- **Tagline:** Short muted subtitle line below the role
+- **CTA buttons:** `"View Work"` (accent gradient fill) + `"Download CV"` (ghost/outline)
+- **Scroll indicator:** Animated downward arrow using `scroll-down` keyframes
+- Entrance animations via Framer Motion (`opacity` + `y` stagger on children)
+
+---
+
+#### About Section (`AboutSection.tsx`)
+
+- Two-column layout (text left, visual right) on desktop; stacked on mobile
+- **Left:** Section label (`"About Me"`), multi-paragraph bio text, a row of stat counters (e.g. "3+ Years Experience", "20+ Projects")
+- **Right:** Portrait image or abstract graphic inside a container with accent gradient border
+- Scroll-triggered fade-in via GSAP ScrollTrigger
+
+---
+
+#### Work / Projects Section (`WorkSection.tsx`)
+
+- Grid of project cards (2 columns desktop, 1 column mobile)
+- **Each card:** Dark surface (`bg-surface`), project thumbnail, title, short description, tech-tag chips, and `"View Project"` link
+- Card hover: accent gradient border appears (animated via `gradient-shift`)
+- Cards animate in on scroll with staggered Framer Motion variants
+
+---
+
+#### Skills Section (`SkillsSection.tsx`)
+
+- Section label + headline
+- Skills listed as labeled progress bars
+  - Bar fill uses the accent gradient
+  - Fill width animates from 0 → target % on scroll entry (GSAP ScrollTrigger + `gsap.to`)
+- Categories: e.g. Frontend, Tools, Design
+
+---
+
+#### Contact Section (`ContactSection.tsx`)
+
+- Centered layout with headline and subtext
+- Contact form: Name · Email · Message fields — `bg-surface` inputs with `border-stroke` and focus accent gradient border
+- Submit button with accent gradient
+- Social icon links row (GitHub, LinkedIn, Twitter/X) below the form
+
+---
+
+#### Footer (`Footer.tsx`)
+
+- Single-row, `border-t border-stroke`, `py-6`
+- Left: copyright text
+- Right: "Back to top" link with upward arrow icon — smooth-scrolls to `#hero`
+
+---
+
+#### Color & Spacing Reference
+
+| Token | Value |
+|-------|-------|
+| Background | `hsl(0 0% 4%)` |
+| Surface | `hsl(0 0% 8%)` |
+| Text primary | `hsl(0 0% 96%)` |
+| Muted text | `hsl(0 0% 53%)` |
+| Stroke / border | `hsl(0 0% 12%)` |
+| Accent gradient | `#89AACC → #4E85BF` |
+
+---
+
+#### Animation & Interaction Summary
+
+| Trigger | Library | Effect |
+|---------|---------|--------|
+| Page load | Framer Motion | Hero children stagger in (`opacity 0→1`, `y 20→0`) |
+| Scroll enter | GSAP ScrollTrigger | Sections fade + slide up |
+| Skill bars | GSAP | Width animates from 0 → value% |
+| Role ticker | CSS + JS timer | `role-fade-in` keyframe cycles |
+| Scroll indicator | CSS | `scroll-down` keyframe loop |
+| Gradient borders | CSS | `gradient-shift` keyframe on hover |
+| Navbar hide/show | GSAP ScrollTrigger | `y: -100%` ↔ `y: 0` |
+
+---
+
+## 13. Liquid Whisper Art — Cinematic Full-Page Landing
 
 **🔗 Live Preview:** [liquid-whisper-art.lovable.app](https://liquid-whisper-art.lovable.app/)
 
@@ -1069,7 +1240,7 @@ All scroll-triggered animations use `useInView(ref, { once: true, margin: '-100p
 
 ---
 
-## 13. SkyElite — Private Jet Hero
+## 14. SkyElite — Private Jet Hero
 
 **🔗 Live Preview:** [skyelite-landing-dream.lovable.app](https://skyelite-landing-dream.lovable.app/)
 
@@ -1123,7 +1294,7 @@ All scroll-triggered animations use `useInView(ref, { once: true, margin: '-100p
 
 ---
 
-## 14. Stellar.ai — AI Landing Hero
+## 15. Stellar.ai — AI Landing Hero
 
 **🔗 Live Preview:** [stellar-bool.lovable.app](https://stellar-bool.lovable.app/)
 
