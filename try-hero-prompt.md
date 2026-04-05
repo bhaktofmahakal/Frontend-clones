@@ -24,6 +24,7 @@
 | 14 | [SkyElite — Private Jet Hero](#14-skyelite--private-jet-hero) | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
 | 15 | [Stellar.ai — AI Landing Hero](#15-stellarai--ai-landing-hero) | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
 | 16 | [Aethera Vision Forge — Cinematic Hero](#16-aethera-vision-forge--cinematic-hero) | React · Vite · Tailwind CSS · TypeScript | [Preview →](https://aethera-vision-forge.lovable.app/) |
+| 17 | [Remoto — Remote Team Management Hero](#17-remoto--remote-team-management-hero) | React · Tailwind CSS v4 · Motion | [Preview →](https://remoto-mbn.lovable.app/) |
 
 ---
 
@@ -1457,3 +1458,99 @@ All scroll-triggered animations use `useInView(ref, { once: true, margin: '-100p
 | `animate-fade-rise` | `opacity: 0; translateY(20px)` → `opacity: 1; translateY(0)` | 0.8 s ease-out | — |
 | `animate-fade-rise-delay` | same as above | 0.8 s ease-out | 0.2 s |
 | `animate-fade-rise-delay-2` | same as above | 0.8 s ease-out | 0.4 s |
+
+---
+
+## 17. Remoto — Remote Team Management Hero
+
+**🔗 Live Preview:** [remoto-mbn.lovable.app](https://remoto-mbn.lovable.app/)
+
+**🛠 Tech Stack:** React · Tailwind CSS v4 · Motion
+
+### Fonts
+
+| Role | Font |
+|------|------|
+| Headings / UI | **Geist** |
+| Accent / italic word | **Instrument Serif** (italic) |
+
+### Layout & Spacing
+
+- Section: `min-h-screen` with centered alignment
+- Main content container: `max-w-[1200px]`, `pt-[290px]` (heavy top padding for editorial feel), vertical `gap-8` (32 px) between elements
+
+### Video Background
+
+- URL: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260302_085640_276ea93b-d7da-4418-a09b-2aa5b490e838.mp4`
+- Attributes: `autoPlay loop muted playsInline`
+- Class: `className="w-full h-full object-cover [transform:scaleY(-1)]"` — video is **vertically flipped** via `scaleY(-1)`
+
+### Gradient Overlay
+
+- Layered on top of the video to blend into the white background
+- Class: `className="absolute inset-0 bg-gradient-to-b from-[26.416%] from-[rgba(255,255,255,0)] to-[66.943%] to-white"`
+
+### Typography — Main Heading
+
+| Property | Value |
+|----------|-------|
+| Font | Geist |
+| Weight | Medium |
+| Letter spacing | `-0.04em` |
+| Desktop size | `80px` |
+
+- Text content: `Simple [management] for your remote team`
+- The word **"management"** is rendered in **Instrument Serif italic** at `100px`
+
+### Description
+
+| Property | Value |
+|----------|-------|
+| Font | Geist |
+| Size | `18px` |
+| Color | `#373a46` (slate) |
+| Opacity | `80%` |
+| Max width | `554px` |
+
+### Interactive Components
+
+#### Email Navbar (Input Container)
+
+- Shape: fully rounded — `border-radius: 40px`
+- Background: `bg-[#fcfcfc]`
+- Border: thin, light
+- Shadow: `box-shadow: 0px 10px 40px 5px rgba(194, 194, 194, 0.25)`
+- Contains: email text input on the left + CTA button on the right
+
+#### CTA Button — "Create Free Account"
+
+- Style: dark, multi-layered gradient
+- Shadow: `shadow-[inset_-4px_-6px_25px_0px_rgba(201,201,201,0.08),inset_4px_4px_10px_0px_rgba(29,29,29,0.24)]`
+- Effect: high-gloss tactile appearance from complex inner shadow
+
+#### Social Proof Badge
+
+- Positioned below the email input
+- Text: `1,020+ Reviews`
+- Contains a row of star / brand icons
+
+### Animations (Motion library)
+
+Staggered **fade and slide up** entrance for each element:
+
+| Element | Animation |
+|---------|-----------|
+| Main heading | `opacity: 0 → 1`, `y: 20 → 0`, slight delay stagger |
+| Description | Same, delayed after heading |
+| Email input block | Same, delayed after description |
+
+### Key Technical Specs
+
+| Spec | Value |
+|------|-------|
+| Video class | `className="w-full h-full object-cover [transform:scaleY(-1)]"` |
+| Gradient class | `className="absolute inset-0 bg-gradient-to-b from-[26.416%] from-[rgba(255,255,255,0)] to-[66.943%] to-white"` |
+| Button shadow | `shadow-[inset_-4px_-6px_25px_0px_rgba(201,201,201,0.08),inset_4px_4px_10px_0px_rgba(29,29,29,0.24)]` |
+| Content padding-top | `290px` |
+| Heading letter-spacing | `-0.04em` |
+| "management" font size | `100px` (Instrument Serif italic) |
