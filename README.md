@@ -65,10 +65,11 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 9 | Vex — Modern SaaS Landing | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
 | 10 | CodeNest — Coding Education Hero | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
 | 11 | Gaze Aether — Data Insights Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
-| 12 | Liquid Whisper Art — Cinematic Full-Page Landing | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
-| 13 | SkyElite — Private Jet Hero | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
-| 14 | Stellar.ai — AI Landing Hero | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
-| 15 | Aethera Vision Forge — Cinematic Hero | React · Vite · Tailwind CSS · TypeScript | [Preview →](https://aethera-vision-forge.lovable.app/) |
+| 12 | Portfolio Boom — Dark Portfolio Landing | React · Vite · Tailwind CSS · TypeScript · GSAP · Framer Motion · hls.js | [Preview →](https://portfolio-boom.lovable.app/) |
+| 13 | Liquid Whisper Art — Cinematic Full-Page Landing | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
+| 14 | SkyElite — Private Jet Hero | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
+| 15 | Stellar.ai — AI Landing Hero | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
+| 16 | Aethera Vision Forge — Cinematic Hero | React · Vite · Tailwind CSS · TypeScript | [Preview →](https://aethera-vision-forge.lovable.app/) |
 
 ---
 
