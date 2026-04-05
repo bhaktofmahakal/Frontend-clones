@@ -67,6 +67,7 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 11 | Gaze Aether — Data Insights Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://gaze-aether.lovable.app/) |
 | 12 | Liquid Whisper Art — Cinematic Full-Page Landing | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
 | 13 | SkyElite — Private Jet Hero | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
+| 14 | Stellar.ai — AI Landing Hero | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
 
 ---
 
