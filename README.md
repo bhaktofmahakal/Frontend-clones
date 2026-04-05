@@ -42,6 +42,7 @@ A curated collection of high-fidelity frontend clones of modern SaaS and AI-prod
 | **Corelayer** | [View →](https://corelayer.vercel.app/) | Next.js · CSS | Enterprise SaaS product page |
 | **Antigravity** | [View →](https://antigravity-google.vercel.app/) | Next.js · CSS | Creative agency / startup landing page |
 | **Reflex** | [View →](https://reflex-dev-clone.vercel.app/) | Next.js · CSS | Python web-framework product page |
+| **Vex** | [View →](https://vex-landing.lovable.app/) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | Modern AI-native SaaS team workspace landing page |
 
 ---
 
@@ -61,7 +62,8 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 6 | Automotive Dealership Hero | React · Tailwind CSS · Google Fonts | [Preview →](https://hero-drive-dream.lovable.app/) |
 | 7 | Ethereal Glow — Talent Acquisition Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://ethereal-glow-hero.lovable.app) |
 | 8 | Velorah — Cinematic Video Hero | React · Vite · Tailwind CSS · TypeScript · shadcn/ui | [Preview →](https://velorah.lovable.app/) |
-| 9 | CodeNest — Coding Education Hero | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
+| 9 | Vex — Modern SaaS Landing | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | [Preview →](https://vex-landing.lovable.app/) |
+| 10 | CodeNest — Coding Education Hero | React · Tailwind CSS · hls.js · lucide-react | [Preview →](https://glow-glass-code.lovable.app/) |
 
 ---
 
