@@ -23,6 +23,7 @@
 | 13 | [Liquid Whisper Art — Cinematic Full-Page Landing](#13-liquid-whisper-art--cinematic-full-page-landing) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://liquid-whisper-art.lovable.app/) |
 | 14 | [SkyElite — Private Jet Hero](#14-skyelite--private-jet-hero) | React · TypeScript · Tailwind CSS · Lucide React | [Preview →](https://skyelite-landing-dream.lovable.app/) |
 | 15 | [Stellar.ai — AI Landing Hero](#15-stellarai--ai-landing-hero) | React · Tailwind CSS · Lucide React | [Preview →](https://stellar-bool.lovable.app/) |
+| 16 | [Nexora — SaaS Landing Hero](#16-nexora--saas-landing-hero) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion · lucide-react | [Preview →](https://nexora-landing.lovable.app/) |
 
 ---
 
@@ -1371,3 +1372,137 @@ All scroll-triggered animations use `useInView(ref, { once: true, margin: '-100p
 
 - `mt-24 flex` row
 - Logos: **INTERSCOPE**, **SPOTIFY**, **Nexera** (dot-grid icon), **M3** (serif italic), **LAURA COLE** (LC circle monogram), **vertex** (dots)
+
+---
+
+## 16. Nexora — SaaS Landing Hero
+
+**🔗 Live Preview:** [nexora-landing.lovable.app](https://nexora-landing.lovable.app/)
+
+**🛠 Tech Stack:** React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion · lucide-react
+
+### Page Layout
+
+- `h-screen flex flex-col bg-background overflow-hidden` — Navbar + Hero fill exactly 100vh with no scroll
+- Two Google Fonts imported via CSS: **Instrument Serif** (display/headings, including italic) and **Inter** (body text)
+
+### Fonts & Design Tokens (`index.css`)
+
+**Font import:**
+```css
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
+```
+
+**CSS variables (`:root`):**
+
+| Variable | Value |
+|----------|-------|
+| `--background` | `0 0% 100%` (white) |
+| `--foreground` | `210 14% 17%` (dark charcoal) |
+| `--primary` | `210 14% 17%` / `--primary-foreground: 0 0% 100%` |
+| `--secondary` | `0 0% 96%` / `--secondary-foreground: 0 0% 9%` |
+| `--muted` | `0 0% 96%` / `--muted-foreground: 184 5% 55%` |
+| `--accent` | `239 84% 67%` (indigo/blue) / `--accent-foreground: 0 0% 100%` |
+| `--border` | `0 0% 90%` |
+| `--ring` | `239 84% 67%` |
+| `--radius` | `0.5rem` |
+| `--font-display` | `'Instrument Serif', serif` |
+| `--font-body` | `'Inter', sans-serif` |
+| `--shadow-dashboard` | `0 25px 80px -12px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06)` |
+
+- Tailwind config extends `fontFamily` with `display` and `body` mapped to the CSS vars
+- All colors use `hsl(var(--token))` pattern
+- No dark mode — light only
+
+### Navbar
+
+- `flex items-center justify-between px-6 md:px-12 lg:px-20 py-5 font-body`
+- **Left:** Logo text `✦ Nexora` — `text-xl font-semibold tracking-tight text-foreground`
+- **Center/Right** (hidden on mobile): Nav links "Home", "Pricing", "About", "Contact" — `text-sm text-muted-foreground hover:text-foreground` with `gap-8`
+- **CTA Button:** `rounded-full px-5 text-sm font-medium` using primary styling
+
+### Hero Section
+
+- **Background Video:** Fullscreen muted autoplay loop, `absolute inset-0 w-full h-full object-cover z-0`
+  - URL: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4`
+- All content: `relative z-10 flex flex-col items-center w-full`
+
+#### 1. Badge
+
+| Property | Value |
+|----------|-------|
+| **Animation** | Framer Motion fade up from `y: 10`, duration `0.5s` |
+| **Style** | `inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-1.5 text-sm text-muted-foreground font-body mb-6` |
+| **Text** | `"Now with GPT-5 support ✨"` |
+
+#### 2. Headline
+
+| Property | Value |
+|----------|-------|
+| **Animation** | Framer Motion fade up from `y: 16`, duration `0.6s`, delay `0.1s` |
+| **Style** | `text-center font-display text-5xl md:text-6xl lg:text-[5rem] leading-[0.95] tracking-tight text-foreground max-w-xl` |
+| **Content** | "The Future of **Smarter** Automation" — the word *Smarter* renders in Instrument Serif italic |
+
+#### 3. Subheadline
+
+| Property | Value |
+|----------|-------|
+| **Animation** | Framer Motion fade up from `y: 16`, duration `0.6s`, delay `0.2s` |
+| **Style** | `mt-4 text-center text-base md:text-lg text-muted-foreground max-w-[650px] leading-relaxed font-body` |
+| **Text** | `"Automate your busywork with intelligent agents that learn, adapt, and execute—so your team can focus on what matters most."` |
+
+#### 4. CTA Buttons
+
+| Property | Value |
+|----------|-------|
+| **Animation** | Framer Motion fade up from `y: 16`, duration `0.6s`, delay `0.3s` |
+| **Layout** | `mt-5 flex items-center gap-3` |
+| **Primary Button** | `rounded-full px-6 py-5 text-sm font-medium font-body` — text `"Book a demo"` |
+| **Play Button** | Ghost variant, `h-11 w-11 rounded-full border-0 bg-background shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:bg-background/80` with Lucide `Play` icon `h-4 w-4 fill-foreground` |
+
+#### 5. Dashboard Preview (custom coded — not an image)
+
+| Property | Value |
+|----------|-------|
+| **Animation** | Framer Motion fade up from `y: 30`, duration `0.8s`, delay `0.5s` |
+| **Container** | `mt-8 w-full max-w-5xl` |
+| **Frosted glass wrapper** | `rounded-2xl overflow-hidden p-3 md:p-4` with inline styles: `background: rgba(255,255,255,0.4)`, `border: 1px solid rgba(255,255,255,0.5)`, `boxShadow: var(--shadow-dashboard)` |
+
+**Dashboard internals** (`text-[11px]`, `select-none pointer-events-none`):
+
+- **Top bar:** Logo "N" in rounded box + "Nexora" + chevron · Search bar with `⌘K` shortcut · "Move Money" + bell + avatar "JB"
+- **Sidebar** (`w-40`): Items — Home (active), Tasks (badge "10"), Transactions, Payments (chevron), Cards, Capital, Accounts (chevron). Section "Workflows": Trake rutes, Payments, Notifications, Settings
+- **Main content** (`bg-secondary/30`):
+  - Greeting: `"Welcome, Jane"` — `text-sm font-semibold`
+  - Action buttons row: Send (primary/accent), Request, Transfer, Deposit, Pay Bill, Create Invoice — `rounded-full` pill buttons `text-[10px]` + "Customize" text
+
+**Two equal-width cards** (`flex-1 basis-0`) side by side:
+
+| Card | Content |
+|------|---------|
+| **Balance** | "Mercury Balance" with checkmark · Amount `$8,450,190.32` (cents in `text-xs text-muted-foreground`) · Stats: Last 30 Days, +$1.8M green, -$900K red · SVG area chart (`h-20`) with smooth cubic Bézier curve, linear gradient fill from accent at 15% opacity to transparent, stroke in accent color `strokeWidth="1.5"` |
+| **Accounts** | Header "Accounts" with `+` and `⋮` icons · Three rows (`py-3`, no dividers, `text-xs`, `justify-between`): Credit `$98,125.50`, Treasury `$6,750,200.00`, Operations `$1,592,864.82` |
+
+**Transactions table:** "Recent Transactions" heading, columns Date / Description / Amount / Status. 4 rows:
+
+| Description | Amount | Status |
+|-------------|--------|--------|
+| AWS | -$5,200 | Pending (amber) |
+| Client Payment | +$125,000 | Completed (green) |
+| Payroll | -$85,450 | Completed |
+| Office Supplies | -$1,200 | Completed |
+
+### Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| `framer-motion` | All entrance animations |
+| `lucide-react` | All icons |
+| `shadcn/ui Button` | CTA buttons |
+| `tailwindcss-animate` | Tailwind animation plugin |
+
+### Key Design Decisions
+
+- Dashboard intentionally overflows toward the bottom of the viewport, clipped by `overflow-hidden` on the parent
+- The SVG area chart uses a hand-crafted cubic Bézier path — no charting library
+- All colors use semantic Tailwind tokens (`hsl(var(--...))`) — never raw color values in components
