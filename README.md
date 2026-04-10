@@ -83,9 +83,10 @@ Side projects by the same author:
 
 | Project | Description | Link |
 |---------|-------------|------|
-| **Repo-Lens** | GitHub repository analyser | [repo-lens-gamma.vercel.app](https://repo-lens-gamma.vercel.app/) |
+| **Repo-Lens** | GitHub repository analyser | [Link](https://repo-lens-gamma.vercel.app/) |
+| **Omini** | AI Agent Builder | [Link](https://omniagent-studio.vercel.app/) |
+| **Talksy** | Conversational AI chat app | [Link](https://talksy-sand.vercel.app/) |
 
-| **Talksy** | Conversational AI chat app | [talksy-sand.vercel.app](https://talksy-sand.vercel.app/) |
 
 ---
 
