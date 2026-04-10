@@ -79,7 +79,7 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 
 ## Personal Projects
 
-Side projects by the same author:
+Side/Fun projects:
 
 | Project | Description | Link |
 |---------|-------------|------|
