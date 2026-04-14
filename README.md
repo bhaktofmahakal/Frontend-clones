@@ -33,7 +33,6 @@ A curated collection of high-fidelity frontend clones of modern SaaS and AI-prod
 
 | Clone | Live Demo | Tech Stack | Description |
 |-------|-----------|------------|-------------|
-| **Cursor** | [View →](https://cursorcom-website-clone-17612950779.vercel.app/) | Next.js · CSS | AI-powered code editor landing page |
 | **Grok** | [View →](https://ai-website-clone-1761067857895.vercel.app/) | Next.js · CSS | xAI Grok chatbot product page |
 | **ElevenLabs** | [View →](https://elevenlabs-clone-gilt.vercel.app/) | Next.js 15 · TypeScript · MongoDB | Text-to-speech platform with audio playback |
 | **VectorShift** | [View →](https://vectorshift-clone-frontend.vercel.app/) | Next.js · CSS | AI automation platform landing page |
@@ -42,7 +41,6 @@ A curated collection of high-fidelity frontend clones of modern SaaS and AI-prod
 | **Corelayer** | [View →](https://corelayer.vercel.app/) | Next.js · CSS | Enterprise SaaS product page |
 | **Antigravity** | [View →](https://antigravity-google.vercel.app/) | Next.js · CSS | Creative agency / startup landing page |
 | **Reflex** | [View →](https://reflex-dev-clone.vercel.app/) | Next.js · CSS | Python web-framework product page |
-| **Vex** | [View →](https://vex-landing.lovable.app/) | React · Vite · Tailwind CSS · TypeScript · shadcn/ui · Framer Motion | Modern AI-native SaaS team workspace landing page |
 
 ---
 
