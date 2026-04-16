@@ -28,6 +28,7 @@
 | 18 | [Remoto — Remote Team Management Hero](#18-remoto--remote-team-management-hero) | React · Tailwind CSS v4 · Motion | [Preview →](https://remoto-mbn.lovable.app/) |
 | 19 | [Swift Spark Aesthetics — AI Website Builder Hero](#19-swift-spark-aesthetics--ai-website-builder-hero) | React · Tailwind CSS · TypeScript · Motion · hls.js · lucide-react | [Preview →](https://swift-spark-aesthetics.lovable.app/) |
 | 20 | [Crest AI — AI Automation Hero](#20-crest-ai--ai-automation-hero) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js | [Preview →](https://crest-ai-reach.lovable.app/) |
+| 21 | [Bloom Reel Vista — Video Agency Hero](#21-bloom-reel-vista--video-agency-hero) | React · Tailwind CSS v4 · Google Fonts | [Preview →](https://bloom-reel-vista.lovable.app) |
 
 ---
 
@@ -1961,3 +1962,127 @@ import { motion } from "motion/react";
 | Accent / arrow circle | `#3054ff` · hover `#2040e0` |
 | Headline gradient end | `#b4c0ff` |
 | Decorative gradients | `blue-900/20`, `indigo-900/20` |
+
+---
+
+## 21. Bloom Reel Vista — Video Agency Hero
+
+**🔗 Live Preview:** [bloom-reel-vista.lovable.app](https://bloom-reel-vista.lovable.app)
+
+**🛠 Tech Stack:** React · Tailwind CSS v4 · Google Fonts
+
+### Fonts
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap');
+```
+
+- **Primary / UI font:** `"Barlow"`, sans-serif
+- **Accent / italic font:** `"Instrument Serif"`, italic
+
+### Layout & Background
+
+- **Root container:** `relative w-full min-h-screen overflow-hidden` (full viewport height)
+- **Background video:**
+  - Source: `https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260306_074215_04640ca7-042c-45d6-bb56-58b1e8a42489.mp4`
+  - Attributes: `autoPlay loop muted playsInline`
+  - Classes: `absolute inset-0 w-full h-full object-cover`
+  - **No** color overlays, gradients, or opacity filters on the video
+- **Content layer:** `relative z-10 flex flex-col min-h-screen`
+
+### Navbar
+
+- **Position:** `absolute top-0 left-0 right-0 z-20`
+- **Background:** fully transparent — **no** background fill, **no** border
+- **Padding:** `px-8 py-6`, flexbox `items-center justify-between`
+
+| Section | Content |
+|---------|---------|
+| Left | Brand logo text — Barlow, `font-medium text-white text-xl` |
+| Center | Nav links: "Work", "Services", "About", "Contact" — Barlow, `text-sm font-medium text-white hover:bg-white/10 px-3 py-1.5 rounded transition-colors` |
+| Right | "Get Started" button — Barlow, `font-medium text-sm`, `bg-[#f8f8f8] text-[#171717] rounded-[2px] px-5 py-2 hover:bg-white transition-colors` |
+
+### Featured Badge (centered, top of hero content)
+
+A two-layer "liquid glass" badge:
+
+**Outer ring:**
+- `inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm p-1`
+
+**Inner pill:**
+- `bg-white/90 backdrop-blur-md rounded-full px-4 py-1.5`
+- Text: `"Featured in Fortune"` — Barlow, `text-xs font-medium text-[#171717]`
+
+### Hero Content Block
+
+- **Container:** `flex flex-col items-center justify-end min-h-screen pb-[250px]` (250 px bottom padding)
+- **Inner wrapper:** `relative flex flex-col items-center text-center gap-6 max-w-4xl mx-auto px-4`
+- **Corner accents:** Four `7×7 px` solid white squares (`bg-white`) positioned absolutely at each corner of the inner wrapper:
+  - `absolute -top-3 -left-3`
+  - `absolute -top-3 -right-3`
+  - `absolute -bottom-3 -left-3`
+  - `absolute -bottom-3 -right-3`
+
+### Typography
+
+| Element | Font | Size | Weight | Color | Notes |
+|---------|------|------|--------|-------|-------|
+| Badge label | Barlow | `text-xs` | `font-medium` | `#171717` | Inside inner pill |
+| Headline line 1 | Barlow | `64px` (`text-[64px]`) | `font-light` | `white` | `"Agency that makes your"` |
+| Headline line 2 | Instrument Serif | `64px` (`text-[64px]`) | italic | `white` | `"videos & reels viral"` |
+| Sub-headline | Barlow | `text-lg` | `font-normal` | `white/75` (`text-white/75`) | `max-w-xl` centered paragraph explaining the agency's value proposition |
+
+**Headline markup example:**
+
+```tsx
+<h1 className="leading-tight">
+  <span style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: "64px", color: "#ffffff" }}>
+    Agency that makes your
+  </span>
+  <br />
+  <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontSize: "64px", color: "#ffffff" }}>
+    videos &amp; reels viral
+  </span>
+</h1>
+```
+
+**Sub-headline example text:**
+> "We craft scroll-stopping short-form content that turns your brand into a household name — from concept to final cut."
+
+### CTA Buttons
+
+Two side-by-side buttons, `flex gap-4 items-center`:
+
+| Button | Label | Style |
+|--------|-------|-------|
+| Primary | "Start a Project" | `bg-[#f8f8f8] hover:bg-white text-[#171717] font-medium text-sm px-6 py-3 rounded-[2px] transition-colors` |
+| Secondary | "View Our Work" | `bg-[#f8f8f8] hover:bg-white text-[#171717] font-medium text-sm px-6 py-3 rounded-[2px] transition-colors` |
+
+- Font: Barlow, `font-medium`
+- Border radius: `2px` (very sharp rectangular corners)
+- Background: `#f8f8f8` → `#ffffff` on hover
+- Text color: `#171717`
+
+### Color Palette
+
+| Token | Value |
+|-------|-------|
+| Primary text | `#ffffff` (pure white) |
+| Secondary text | `rgba(255,255,255,0.75)` (`text-white/75`) |
+| Button / badge background | `#f8f8f8` |
+| Button / badge text | `#171717` |
+| Button hover background | `#ffffff` |
+| Nav hover background | `rgba(255,255,255,0.10)` (`bg-white/10`) |
+| Badge outer bg | `rgba(255,255,255,0.10)` (`bg-white/10`) |
+| Badge inner bg | `rgba(255,255,255,0.90)` (`bg-white/90`) |
+| Corner accent | `#ffffff` (solid white) |
+
+### Interactions & Animations
+
+| Element | Interaction |
+|---------|-------------|
+| All buttons | `transition-colors` — `#f8f8f8` → `#ffffff` on hover |
+| Badge | `transition-colors` on hover |
+| Nav links | `hover:bg-white/10` with `transition-colors` |
+
+No entrance animations or motion libraries required.
