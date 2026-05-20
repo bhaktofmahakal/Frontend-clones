@@ -72,7 +72,12 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 18 | Remoto — Remote Team Management Hero | React · Tailwind CSS v4 · Motion | [Preview →](https://remoto-mbn.lovable.app/) |
 | 19 | Swift Spark Aesthetics — AI Website Builder Hero | React · Tailwind CSS · TypeScript · Motion · hls.js · lucide-react | [Preview →](https://swift-spark-aesthetics.lovable.app/) |
 | 20 | Crest AI — AI Automation Hero | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js | [Preview →](https://crest-ai-reach.lovable.app/) |
-| 21 | Marketing Agency Hero | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react | [Preview →](https://bloom-reel-vista.lovable.app) |
+| 21 | Bloom Reel Vista — Video Agency Hero | React · Tailwind CSS v4 · Google Fonts | [Preview →](https://bloom-reel-vista.lovable.app) |
+| 22 | Starscape Shaper — Cinematic Space-Travel Landing Page | React · Framer Motion · CDN | [Preview →](https://starscape-shaper-art.lovable.app) |
+| 23 | Jack — 3D Creator Portfolio Landing Page | React · TypeScript · Tailwind CSS · Framer Motion · lucide-react | [Preview →](https://portfolio-3d-utsav.lovable.app) |
+| 24 | Prisma — Creative Studio Landing Page | React · Vite · TypeScript · Tailwind CSS · Framer Motion · lucide-react | [Preview →](https://light-play-creations.lovable.app) |
+| 25 | VaultShield — Password Manager Hero | React · TypeScript · Tailwind CSS · Framer Motion · lucide-react | [Preview →](https://lock-zen-gleam.lovable.app) |
+| 26 | Axion Studio — Design Agency Landing Page | React · Vite · TypeScript · Tailwind CSS · shaders · lucide-react | [Preview →](https://axion-studio-showcase.lovable.app) |
 
 ---
 

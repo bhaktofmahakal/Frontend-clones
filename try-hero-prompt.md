@@ -29,6 +29,11 @@
 | 19 | [Swift Spark Aesthetics — AI Website Builder Hero](#19-swift-spark-aesthetics--ai-website-builder-hero) | React · Tailwind CSS · TypeScript · Motion · hls.js · lucide-react | [Preview →](https://swift-spark-aesthetics.lovable.app/) |
 | 20 | [Crest AI — AI Automation Hero](#20-crest-ai--ai-automation-hero) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js | [Preview →](https://crest-ai-reach.lovable.app/) |
 | 21 | [Bloom Reel Vista — Video Agency Hero](#21-bloom-reel-vista--video-agency-hero) | React · Tailwind CSS v4 · Google Fonts | [Preview →](https://bloom-reel-vista.lovable.app) |
+| 22 | [Starscape Shaper — Cinematic Space-Travel Landing Page](#22-starscape-shaper--cinematic-space-travel-landing-page) | React · Framer Motion · CDN | [Preview →](https://starscape-shaper-art.lovable.app) |
+| 23 | [Jack — 3D Creator Portfolio Landing Page](#23-jack--3d-creator-portfolio-landing-page) | React · TypeScript · Tailwind CSS · Framer Motion · lucide-react | [Preview →](https://portfolio-3d-utsav.lovable.app) |
+| 24 | [Prisma — Creative Studio Landing Page](#24-prisma--creative-studio-landing-page) | React · Vite · TypeScript · Tailwind CSS · Framer Motion · lucide-react | [Preview →](https://light-play-creations.lovable.app) |
+| 25 | [VaultShield — Password Manager Hero](#25-vaultshield--password-manager-hero) | React · TypeScript · Tailwind CSS · Framer Motion · lucide-react | [Preview →](https://lock-zen-gleam.lovable.app) |
+| 26 | [Axion Studio — Design Agency Landing Page](#26-axion-studio--design-agency-landing-page) | React · Vite · TypeScript · Tailwind CSS · shaders · lucide-react | [Preview →](https://axion-studio-showcase.lovable.app) |
 
 ---
 
@@ -2086,3 +2091,758 @@ Two side-by-side buttons, `flex gap-4 items-center`:
 | Nav links | `hover:bg-white/10` with `transition-colors` |
 
 No entrance animations or motion libraries required.
+
+---
+
+## 22. Starscape Shaper — Cinematic Space-Travel Landing Page
+
+**🔗 Live Preview:** [starscape-shaper-art.lovable.app](https://starscape-shaper-art.lovable.app)
+
+**🛠 Tech Stack:** React 18.3.1 (CDN) · ReactDOM 18.3.1 (CDN) · Babel Standalone 7.29.0 (CDN) · Framer Motion 11.11.17 (CDN)
+
+### Build Prompt
+
+Build a single-page landing site with two full-height sections (**Hero + Capabilities**), both using looping background videos with **custom JS crossfade**, a shared **liquid-glass design system**, and **Framer Motion** entrance animations.
+
+### Layout & Structure
+
+- `body` background: `#000`
+- React app mounted on `#root`
+- Two full-height sections (`min-h-screen`) stacked vertically:
+  - **Hero**
+  - **Capabilities**
+- Shared max-width container (`max-w-6xl mx-auto px-6`) for content alignment
+
+### Background Videos (Crossfade)
+
+- Each section has **two** stacked `video` elements (`absolute inset-0 w-full h-full object-cover`)
+- Videos are `autoPlay loop muted playsInline`
+- Use custom JS to toggle a `data-active` flag every 8–10s
+- Crossfade by animating opacity:
+  - Active video: `opacity-100`
+  - Inactive video: `opacity-0`
+  - Transition: `transition-opacity duration-[2000ms] ease-in-out`
+- Keep a dark overlay gradient (`from-black/70 via-black/40 to-black/80`) for legibility
+
+### Liquid-Glass Design System
+
+Use the same glass styling across navbar, badges, and cards:
+
+- `bg-white/10`
+- `backdrop-blur-xl`
+- `border border-white/20`
+- Subtle inner highlight: `shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]`
+- Rounded corners: `rounded-2xl` (buttons: `rounded-full`)
+
+### Hero Section
+
+**Content layout:** centered, stacked, and motion-animated.
+
+- Glass badge: `"Deep-Space Tourism • 2026 Launch"`
+- Headline: `"Journey Beyond the Stars"` with gradient highlight on `"Stars"`
+- Subheadline: short, cinematic copy about immersive space travel
+- CTA row:
+  - Primary: `"Reserve Your Seat"`
+  - Secondary: `"View Fleet"`
+
+### Capabilities Section
+
+Grid of 3–4 glass cards:
+
+- **Zero-G Suites** — private cabin experience
+- **Aurora Routes** — polar sky corridors
+- **AI Pilots** — precision autonomous navigation
+- **Stellar Lounge** — observation deck & concierge
+
+### Framer Motion Animations
+
+Use staggered entrance animations:
+
+| Element | Motion |
+|---------|--------|
+| Badge | `initial={{ opacity: 0, y: 12 }}` → `animate={{ opacity: 1, y: 0 }}` |
+| Headline | `initial={{ opacity: 0, y: 20 }}` → `animate={{ opacity: 1, y: 0 }}` |
+| Subheadline | `initial={{ opacity: 0 }}` → `animate={{ opacity: 1 }}` |
+| Buttons | `initial={{ opacity: 0, y: 16 }}` → `animate={{ opacity: 1, y: 0 }}` |
+| Capability cards | `initial={{ opacity: 0, y: 20 }}` → `whileInView={{ opacity: 1, y: 0 }}` with `staggerChildren` |
+
+### Color Palette
+
+| Token | Value |
+|-------|-------|
+| Background | `#000000` |
+| Primary text | `#ffffff` |
+| Secondary text | `rgba(255,255,255,0.72)` |
+| Accent gradient | `#7aa2ff` → `#b8f3ff` |
+| Glass border | `rgba(255,255,255,0.20)` |
+| CTA primary bg | `rgba(255,255,255,0.9)` |
+| CTA primary text | `#0b0f1a` |
+
+---
+
+## 23. Jack — 3D Creator Portfolio Landing Page
+
+**🔗 Live Preview:** [portfolio-3d-utsav.lovable.app](https://portfolio-3d-utsav.lovable.app)
+
+**🛠 Tech Stack:** React · TypeScript · Tailwind CSS · Framer Motion · Lucide React
+
+Build a 3D Creator portfolio landing page for "Jack" using React, TypeScript, Tailwind CSS, Framer Motion, and Lucide React. The page has a dark theme (#0C0C0C background) with the font Kanit (Google Fonts, weights 300-900). The page title is "Jack -- 3D Creator".
+
+### GLOBAL STYLES
+
+Background: #0C0C0C on html, body, #root, and the main wrapper  
+Font family: 'Kanit', sans-serif  
+Global reset: box-sizing border-box, margin 0, padding 0  
+CSS class .hero-heading: gradient text using background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%) with -webkit-background-clip: text and -webkit-text-fill-color: transparent  
+Main wrapper has overflowX: 'clip'
+
+### SECTION ORDER
+
+HeroSection  
+MarqueeSection  
+AboutSection  
+ServicesSection  
+ProjectsSection
+
+### 1. HERO SECTION
+
+Full viewport height (h-screen), flex column layout with overflowX: clip.
+
+Navbar: Horizontal nav bar with 4 links -- "About", "Price", "Projects", "Contact" -- evenly spaced with justify-between. Text color #D7E2EA, font-medium, uppercase, tracking-wider. Sizes: text-sm md:text-lg lg:text-[1.4rem]. Padding: px-6 md:px-10 pt-6 md:pt-8. Hover: opacity 70% with 200ms transition.
+
+Hero Heading: Massive h1 with text "Hi, i'm jack" (lowercase "i", curly apostrophe via '). Uses the .hero-heading gradient text class. Font-black, uppercase, tracking-tight, leading-none, whitespace-nowrap, w-full. Font sizes: text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]. Margin top: mt-6 sm:mt-4 md:-mt-5. Wrapped in overflow-hidden container.
+
+Bottom bar: Flexbox justify-between items-end with pb-7 sm:pb-8 md:pb-10:
+
+Left: paragraph text "a 3d creator driven by crafting striking and unforgettable projects", color #D7E2EA, font-light, uppercase, tracking-wide, leading-snug. Font size: clamp(0.75rem, 1.4vw, 1.5rem). Max-width: max-w-[160px] sm:max-w-[220px] md:max-w-[260px].  
+Right: ContactButton component (see below)
+
+Hero Portrait: Centered absolutely. Uses a Magnet component (mouse-following magnetic effect) wrapping an image. Image URL: https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png. Magnet settings: padding 150, strength 3, activeTransition "transform 0.3s ease-out", inactiveTransition "transform 0.6s ease-in-out". Positioning: absolute left-1/2 -translate-x-1/2 z-10. Width: w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]. On mobile: top-1/2 -translate-y-1/2. On sm+: sm:top-auto sm:translate-y-0 sm:bottom-0.
+
+FadeIn animations: Navbar fades in with delay 0, y -20. Heading: delay 0.15, y 40. Left text: delay 0.35, y 20. Contact button: delay 0.5, y 20. Portrait: delay 0.6, y 30.
+
+### 2. MARQUEE SECTION
+
+Two rows of images that scroll horizontally based on page scroll position. Background #0C0C0C. Padding: pt-24 sm:pt-32 md:pt-40 pb-10.
+
+21 GIF images from motionsites.ai (exact URLs):
+
+https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif  
+https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif  
+https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif  
+https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif  
+https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif  
+https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif  
+https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif  
+https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif  
+https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif  
+https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif  
+https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif  
+https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif  
+https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif  
+https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif  
+https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif  
+https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif  
+https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif  
+https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif  
+https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif  
+https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif  
+https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif
+
+Row 1: first 11 images, tripled for seamless scrolling. Moves RIGHT on scroll (translateX(offset - 200)).  
+Row 2: remaining 10 images, tripled. Moves LEFT on scroll (translateX(-(offset - 200))).  
+Scroll offset calculated as: (window.scrollY - sectionTop + window.innerHeight) * 0.3  
+Each image tile: 420px x 270px, rounded-2xl, object-cover, lazy loaded.  
+Gap between tiles: gap-3. Gap between rows: gap-3.  
+Uses willChange: 'transform' for performance. Scroll listener is passive.
+
+### 3. ABOUT SECTION
+
+Full-height centered section with min-h-screen, padding px-5 sm:px-8 md:px-10 py-20.
+
+Four decorative 3D images positioned absolutely in corners:
+
+Top-left: Moon icon -- https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png -- w-[120px] sm:w-[160px] md:w-[210px], positioned top-[4%] left-[1%] sm:left-[2%] md:left-[4%]. FadeIn: delay 0.1, x -80, y 0, duration 0.9.  
+Bottom-left: 3D object -- https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png -- w-[100px] sm:w-[140px] md:w-[180px], positioned bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%]. FadeIn: delay 0.25, x -80, y 0, duration 0.9.  
+Top-right: Lego icon -- https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png -- w-[120px] sm:w-[160px] md:w-[210px], positioned top-[4%] right-[1%] sm:right-[2%] md:right-[4%]. FadeIn: delay 0.15, x 80, y 0, duration 0.9.  
+Bottom-right: 3D group -- https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png -- w-[130px] sm:w-[170px] md:w-[220px], positioned bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%]. FadeIn: delay 0.3, x 80, y 0, duration 0.9.
+
+Heading: "About me" using .hero-heading gradient text, font-black, uppercase, leading-none, tracking-tight, centered. Font size: clamp(3rem, 12vw, 160px). FadeIn: delay 0, y 40.
+
+Animated paragraph: Uses a character-by-character scroll-driven opacity animation. Text: "With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!" -- color #D7E2EA, font-medium, centered, leading-relaxed, max-w-[560px], font size clamp(1rem, 2vw, 1.35rem). Each character animates from opacity 0.2 to 1 based on scroll progress, with scroll offset ['start 0.8', 'end 0.2'].
+
+Contact button below the text block. Gap between heading/text: gap-10 sm:gap-14 md:gap-16. Gap between text block and button: gap-16 sm:gap-20 md:gap-24.
+
+### 4. SERVICES SECTION
+
+White background (#FFFFFF), with rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] top corners. Padding: px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32.
+
+Heading: "Services" in #0C0C0C, font-black, uppercase, centered, font size clamp(3rem, 12vw, 160px). Margin bottom: mb-16 sm:mb-20 md:mb-28.
+
+5 service items in a vertical list, max-w-5xl, centered:
+
+01 - 3D Modeling: "Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations."  
+02 - Rendering: "High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life."  
+03 - Motion Design: "Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences."  
+04 - Branding: "Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence."  
+05 - Web Design: "Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience."
+
+Each item: horizontal layout with number (font-black, font size clamp(3rem, 10vw, 140px), color #0C0C0C) on the left and name + description stacked vertically on the right. Name: font-medium, uppercase, font size clamp(1rem, 2.2vw, 2.1rem). Description: font-light, leading-relaxed, max-w-2xl, font size clamp(0.85rem, 1.6vw, 1.25rem), opacity 0.6. Items separated by 1px borders (rgba(12, 12, 12, 0.15)). Padding: py-8 sm:py-10 md:py-12. Staggered FadeIn: each item delays by i * 0.1.
+
+### 5. PROJECTS SECTION
+
+Dark background (#0C0C0C), rounded top corners rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px], pulled up with -mt-10 sm:-mt-12 md:-mt-14, z-10.
+
+Heading: "Project" (singular) using .hero-heading gradient, same styling as other headings.
+
+3 sticky-stacking project cards that scale down as you scroll past them (card stacking effect using Framer Motion useScroll and useTransform). Each card is sticky top-24 md:top-32 inside an h-[85vh] container.
+
+Scale calculation: targetScale = 1 - (totalCards - 1 - index) * 0.03. Each card offset by top: ${index * 28}px.
+
+Each card has: rounded-[40px] sm:rounded-[50px] md:rounded-[60px], border-2 border-[#D7E2EA], background #0C0C0C, padding p-4 sm:p-6 md:p-8.
+
+Card layout:
+
+Top row: Number (huge, same style as services), category label, project name, and a "Live Project" ghost button (rounded-full, border-2 #D7E2EA, uppercase, tracking-widest).  
+Bottom row: Two-column image grid -- left column (40% width) has 2 stacked images, right column (60%) has 1 tall image. All images have heavy border radius rounded-[40px] sm:rounded-[50px] md:rounded-[60px]. Left top image height: clamp(130px, 16vw, 230px). Left bottom image height: clamp(160px, 22vw, 340px).
+
+Project data with CloudFront image URLs:
+
+Project 01 - "Nextlevel Studio" (Client):
+
+Col1 image 1: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&amp;w=1280&amp;q=85  
+Col1 image 2: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&amp;w=1280&amp;q=85  
+Col2 image: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&amp;w=1280&amp;q=85
+
+Project 02 - "Aura Brand Identity" (Personal):
+
+Col1 image 1: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&amp;w=1280&amp;q=85  
+Col1 image 2: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&amp;w=1280&amp;q=85  
+Col2 image: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&amp;w=1280&amp;q=85
+
+Project 03 - "Solaris Digital" (Client):
+
+Col1 image 1: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&amp;w=1280&amp;q=85  
+Col1 image 2: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&amp;w=1280&amp;q=85  
+Col2 image: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&amp;w=1280&amp;q=85
+
+### REUSABLE COMPONENTS
+
+ContactButton: Rounded-full pill button with gradient background linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%), inner box-shadow 0px 4px 4px rgba(181, 1, 167, 0.25), 4px 4px 12px #7721B1 inset, white 2px outline with -3px offset. Text: white, font-medium, uppercase, tracking-widest. Sizes: px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4, text text-xs sm:text-sm md:text-base. Label: "Contact Me".
+
+LiveProjectButton: Ghost/outline pill button. Rounded-full, border-2 border-[#D7E2EA], text color #D7E2EA, font-medium, uppercase, tracking-widest. Sizes: px-8 py-3 sm:px-10 sm:py-3.5, text text-sm sm:text-base. Hover: bg-[#D7E2EA]/10. Label: "Live Project".
+
+FadeIn: Framer Motion wrapper using whileInView with viewport={{ once: true, margin: "50px", amount: 0 }}. Accepts delay, duration (default 0.7), x (default 0), y (default 30). Easing: [0.25, 0.1, 0.25, 1]. Uses motion.create() for dynamic element types.
+
+Magnet: Mouse-following magnetic hover effect. Tracks mouse position relative to element center, applies translate3d transform divided by strength factor. Activates when cursor is within padding distance of element edge. Smooth transition in (0.3s ease-out) and out (0.6s ease-in-out). Uses willChange: 'transform'.
+
+AnimatedText: Character-by-character scroll-reveal text animation. Each character goes from opacity 0.2 to 1 based on its position in the text relative to scroll progress. Uses Framer Motion useScroll targeting the paragraph element with offset ['start 0.8', 'end 0.2']. Each character uses invisible placeholder + absolute positioned animated span.
+
+### KEY DEPENDENCIES
+
+react, react-dom (^18.3.1)  
+framer-motion (^12.38.0)  
+lucide-react (^0.344.0)  
+tailwindcss (^3.4.1)  
+vite, typescript
+
+### RESPONSIVE BREAKPOINTS
+
+All sections use Tailwind's default breakpoints (sm: 640px, md: 768px, lg: 1024px) with mobile-first approach. Heavy use of clamp() for fluid typography. The entire design scales gracefully from mobile to ultra-wide screens.
+
+---
+
+## 24. Prisma — Creative Studio Landing Page
+
+**🔗 Live Preview:** [light-play-creations.lovable.app](https://light-play-creations.lovable.app)
+
+**🛠 Tech Stack:** React · Vite · TypeScript · Tailwind CSS · Framer Motion · lucide-react
+
+build and follow this exactly no change no mistakes also loading assests impoved
+
+Create a React + Vite + TypeScript + Tailwind CSS landing page for a creative studio called "Prisma". The page has 3 sections: Hero, About, and Features. Use framer-motion for animations and lucide-react for icons. The design is dark, moody, and cinematic with a warm cream color palette.
+
+### FONTS
+
+Load two Google Fonts in index.html:
+
+Almarai (weights: 300, 400, 700, 800) -- used as the global default font
+
+Instrument Serif (italic only) -- used for italic accent text in the About section
+
+In index.css, set the global font family:
+
+* { font-family: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; }
+
+In tailwind.config.js, extend:
+
+colors.primary: #DEDBC8 (warm cream, used for all primary text and accents)
+
+fontFamily.serif: ['"Instrument Serif"', 'serif']
+
+### COLOR SYSTEM
+
+Background: black (#000000) globally, #101010 for the About card, #212121 for Features cards
+
+Primary text color: #E1E0CC (applied via inline style, slightly different from Tailwind primary)
+
+Tailwind primary: #DEDBC8 (used for utility classes like text-primary, text-primary/70)
+
+Gray text: text-gray-400, text-gray-500
+
+Navbar link color: rgba(225, 224, 204, 0.8) with hover: #E1E0CC
+
+### CUSTOM CSS UTILITIES (index.css)
+
+Two SVG noise texture utilities:
+
+.noise-overlay: fractal noise (baseFrequency: 0.85, numOctaves: 3) used as overlay on hero video
+
+.bg-noise: fractal noise (baseFrequency: 0.9, numOctaves: 4) used as subtle background in Features section
+
+Both use inline SVG data URIs with feTurbulence filter.
+
+### SECTION 1: HERO
+
+Full viewport height (h-screen). The entire section has p-4 md:p-6 padding creating an inset effect. Inside is a container with rounded-2xl md:rounded-[2rem] and overflow-hidden.
+
+Background video:
+
+URL: https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4
+
+autoPlay loop muted playsInline, object-cover, fills entire container
+
+Noise overlay on top: .noise-overlay with opacity-[0.7] mix-blend-overlay pointer-events-none
+
+Gradient overlay: bg-gradient-to-b from-black/30 via-transparent to-black/60
+
+Navbar:
+
+Absolutely positioned at top center
+
+Black background pill that hangs from top edge: bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8
+
+5 nav items: "Our story", "Collective", "Workshops", "Programs", "Inquiries"
+
+Text size: text-[10px] sm:text-xs md:text-sm
+
+Gap between items: gap-3 sm:gap-6 md:gap-12 lg:gap-14
+
+Link color: rgba(225, 224, 204, 0.8), hover: #E1E0CC (inline styles)
+
+Hero Content (bottom-aligned):
+
+Absolutely positioned at bottom: absolute bottom-0 left-0 right-0
+
+12-column grid: left 8 columns for heading, right 4 columns for text + button
+
+Giant heading "Prisma" using WordsPullUp component:
+
+Responsive sizes: text-[26vw] sm:text-[24vw] md:text-[22vw] lg:text-[20vw] xl:text-[19vw] 2xl:text-[20vw]
+
+font-medium leading-[0.85] tracking-[-0.07em]
+
+Color: #E1E0CC
+
+Has a superscript asterisk (*) on the final "a" of "Prisma": positioned with absolute top-[0.65em] -right-[0.3em] text-[0.31em]
+
+Pull-up animation: each word slides up from y:20 with staggered delay of 0.08s, triggered by useInView
+
+Description paragraph (right column):
+
+"Prisma is a worldwide network of visual artists, filmmakers and storytellers bound not by place, status or labels but by passion and hunger to unlock potential through our unique perspectives."
+
+text-primary/70 text-xs sm:text-sm md:text-base, line-height: 1.2
+
+Framer motion: fade up from y:20, delay 0.5s, custom ease [0.16, 1, 0.3, 1]
+
+CTA Button "Join the lab":
+
+Pill shape: bg-primary rounded-full
+
+Black text, font-medium, text-sm sm:text-base
+
+Right side has a black circle (bg-black rounded-full w-9 h-9 sm:w-10 sm:h-10) containing a white/cream ArrowRight icon
+
+Hover: gap increases (hover:gap-3), circle scales up (group-hover:scale-110)
+
+Framer motion: fade up from y:20, delay 0.7s, same custom ease
+
+### SECTION 2: ABOUT
+
+bg-black, padded section with centered content
+
+Inner card: bg-[#101010], centered text, max-w-6xl
+
+Top: small label "Visual arts" in text-primary, text-[10px] sm:text-xs
+
+Main heading uses WordsPullUpMultiStyle component with 3 segments:
+
+"I am Marcus Chen," -- font-normal (Almarai)
+
+"a self-taught director." -- italic font-serif (Instrument Serif italic)
+
+"I have skills in color grading, visual effects, and narrative design." -- font-normal
+
+Container: text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-3xl mx-auto leading-[0.95] sm:leading-[0.9]
+
+Each word animates in with pull-up effect (y:20 to y:0), staggered at 0.08s delay
+
+Body paragraph below with scroll-linked character opacity animation:
+
+Text: "Over the last seven years, I have worked with Parallax, a Berlin-based production house that crafts cinema, series, and Noir Studio in Paris. Together, we have created work that has earned international acclaim at several major festivals."
+
+text-[#DEDBC8], text-xs sm:text-sm md:text-base
+
+Each character is individually wrapped in an AnimatedLetter component
+
+Uses useScroll with target offset ['start 0.8', 'end 0.2']
+
+Each character's opacity transitions from 0.2 to 1 based on scroll position, creating a progressive text reveal effect
+
+Character staggering: charProgress = index / totalChars, range [charProgress - 0.1, charProgress + 0.05]
+
+### SECTION 3: FEATURES
+
+min-h-screen bg-black, with subtle .bg-noise overlay at opacity-[0.15]
+
+Header text uses WordsPullUpMultiStyle:
+
+Line 1: "Studio-grade workflows for visionary creators." in cream
+
+Line 2: "Built for pure vision. Powered by art." in text-gray-500
+
+Both: text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal
+
+4-column card grid (lg:h-[480px], gap-3 sm:gap-2 md:gap-1):
+
+Each card has staggered entrance animation: scale from 0.95 + fade in, triggered by useInView (once, margin "-100px"), staggered at 0.15s intervals with ease [0.22, 1, 0.36, 1].
+
+Card 1 - Video card: Full video background (URL: https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4), autoPlay loop muted playsInline, object-cover. Bottom text: "Your creative canvas." in #E1E0CC.
+
+Card 2 - "Project Storyboard." (01): bg-[#212121], small image icon at top (https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171918_4a5edc79-d78f-4637-ac8b-53c43c220606.png&amp;w=1280&amp;q=85, 10x10 sm:12x12 rounded), title with number, 4 checklist items with green Check icons, "Learn more" link with rotated arrow (-45deg).
+
+Card 3 - "Smart Critiques." (02): Same layout as Card 2. Icon: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&amp;w=1280&amp;q=85. 3 checklist items about AI analysis, creative notes, tool integrations.
+
+Card 4 - "Immersion Capsule." (03): Same layout. Icon: https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171809_f56666dc-c099-4778-ad82-9ad4f209567b.png&amp;w=1280&amp;q=85. 3 checklist items about notification silencing, ambient soundscapes, schedule syncing.
+
+All feature card checklist items use Check icon from lucide-react in text-primary color, with text-gray-400 description text. "Learn more" buttons use ArrowRight rotated -45deg.
+
+### SHARED ANIMATION COMPONENTS
+
+WordsPullUp: Splits text by spaces, each word is a motion.span that slides up (y:20 to 0) with staggered delay. Uses useInView (once: true). Supports showAsterisk prop that adds a superscript * after the last character "a" of the final word.
+
+WordsPullUpMultiStyle: Takes an array of {text, className} segments, splits all into individual words preserving per-word className. Same pull-up animation. Words are wrapped in inline-flex flex-wrap justify-center.
+
+### RESPONSIVE BREAKPOINTS
+
+The page is fully responsive across mobile, tablet, and desktop. Cards in Features switch from 1-col (mobile) to 2-col (md) to 4-col (lg). Hero text scales from 26vw down to 19vw. Navbar items compress with smaller gaps on mobile. All padding, font sizes, and spacing use Tailwind responsive prefixes (sm/md/lg/xl/2xl).
+
+### TECH STACK
+
+Vite + React 18 + TypeScript
+
+Tailwind CSS 3
+
+framer-motion (for all animations: pull-up text, fade-in, scroll-linked opacity, card entrances)
+
+lucide-react (ArrowRight, Check icons)
+
+---
+
+## 25. VaultShield — Password Manager Hero
+
+**🔗 Live Preview:** [lock-zen-gleam.lovable.app](https://lock-zen-gleam.lovable.app)
+
+**🛠 Tech Stack:** React · TypeScript · Tailwind CSS · Framer Motion · lucide-react
+
+next entry https://lock-zen-gleam.lovable.app
+
+Create a fullscreen hero section for a password manager app called "VaultShield" using React, TypeScript, Tailwind CSS, Framer Motion, and Lucide React icons.
+
+---
+
+### Fonts
+
+- Heading font: `Helvetica Now Display Bold` loaded from `https://db.onlinewebfonts.com/c/04e6981992c0e2e7642af2074ebe3901?family=Helvetica+Now+Display+Bold` (add as a `<link>` in `index.html`)
+- Body font: `Inter` (weights 300-900) loaded from Google Fonts: `https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap` (imported in CSS)
+
+### CSS Variables
+
+```css
+:root {
+  --font-heading: 'Helvetica Now Display Bold', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --color-text: #192837;
+  --color-accent: #7342E2;
+  --color-login-bg: #F2F2EE;
+}
+```
+
+### Background Video
+
+Full-screen background video covering the entire viewport (`absolute inset-0, object-cover`):
+
+```
+https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260518_003132_8b7edcb6-c64d-4a52-a9ca-879942e122ad.mp4
+```
+
+Attributes: `autoPlay`, `muted`, `loop`, `playsInline`
+
+### Layout Structure
+
+1. Container: `relative w-full min-h-screen`, font-family from `--font-body`, color from `--color-text`
+2. Navbar: max-width 1280px, centered, z-10, `px-5 sm:px-8 py-4 sm:py-5`, flex with items centered and space-between
+3. Hero content: max-width 1280px centered container with `paddingTop: clamp(40px, 8vw, 72px)`, content block capped at `max-width: 560px`
+
+### Logo (SVG)
+
+Custom SVG logo, 32x32, fill `#192837`, geometric angular shape:
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" overflow="visible" viewBox="0 0 256 256">
+  <path d="M 64 128 L 64.5 128 L 32 95 L 0 64 L 0 0 L 64 0 L 128 64 L 128 64.5 L 161 32 L 192 0 L 256 0 L 256 64 L 192 128 L 128 128 L 128 192 L 96 223 L 63.5 256 L 0 256 L 0 192 Z M 256 192 L 224 223 L 191.5 256 L 128 256 L 128 192 L 192 128 L 256 128 Z" fill="#192837"/>
+</svg>
+```
+
+### Navbar Elements
+
+- Left: Logo
+- Center (desktop only, `hidden md:flex`): 5 links — `['Vault', 'Plans', 'Install', 'News', 'Help']`, text-sm font-medium, opacity hover effect
+- Right (desktop only):
+  - "Start For Free" button — `background: #7342E2`, white text, rounded-full, `px-5 py-2.5`
+  - "Sign In" button — `background: #F2F2EE`, dark text, rounded-full, `px-5 py-2.5`
+- Mobile: Hamburger icon (Menu/X from lucide-react), opens a right-side slide-in sheet
+
+### Mobile Menu Sheet (AnimatePresence + Framer Motion)
+
+- Backdrop: fixed inset-0, `rgba(25,40,55,0.35)` background with `blur(4px)` backdrop-filter
+- Sheet: fixed right-0 top-0, width `min(88vw, 360px)`, height `100dvh`, background `#CFC8C5`, box-shadow `-12px 0 48px rgba(25,40,55,0.18)`
+- Sheet animation: slides from `x: '100%'` to `x: 0`, ease `[0.22, 1, 0.36, 1]`, duration 0.45s
+- Sheet content: Logo + close button header, 1px divider, staggered nav links (delay `0.18 + i * 0.07`), bottom CTA buttons matching desktop style
+
+### Hero Heading
+
+- Font: `var(--font-heading)`
+- Size: `clamp(1.65rem, 5vw, 3rem)`
+- Line-height: `1.05`
+- Letter-spacing: `-0.01em`
+- Color: `#192837`
+- Margin-bottom: `24px`
+- Contains inline Lucide icons (Zap, LockKeyhole, Fingerprint) at 24px, color `#192837`, vertically aligned middle, positioned `top: -2px`
+- Text: "Lock Down Your Passwords with Ironclad Security"
+  - Zap icon before "Lock"
+  - LockKeyhole icon between "Passwords" and "with"
+  - Fingerprint icon after "Security"
+
+### Hero Subtext
+
+- Font: `var(--font-body)`
+- Size: `clamp(0.9rem, 2.5vw, 1.1rem)`
+- Line-height: `1.65`
+- Opacity: `0.8`
+- Max-width: `560px`
+- Text: "Zero stress, total control. VaultShield keeps you covered with unbreakable storage, one-tap access, and pro-grade tools for your non-stop world."
+
+### CTA Button
+
+- Background: `#7342E2`
+- Color: white
+- Border-radius: `50px`
+- Padding: `17px 24px`
+- Font: `var(--font-body)`, font-weight semibold
+- Size: `clamp(0.9rem, 2vw, 1rem)`
+- Box-shadow: `0 4px 24px rgba(115,66,226,0.28)`
+- Min-width: `210px`
+- Flex with space-between, gap `32px`
+- Text: "Get It Free" with ArrowRightCircle icon (20px) on the right
+- Hover: `scale(1.04)` + `brightness(1.1)`
+- Tap: `scale(0.96)`
+
+### Animations (Framer Motion)
+
+fadeUp variant applied to heading (delay 0), subtext (delay 0.15s), and CTA button (delay 0.30s):
+
+```js
+hidden: { opacity: 0, y: 28 }
+visible: { opacity: 1, y: 0, transition: { delay: i * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+```
+
+### Dependencies
+
+- `react`, `react-dom`
+- `framer-motion`
+- `lucide-react` (icons: ArrowRightCircle, Zap, LockKeyhole, Fingerprint, Menu, X)
+- Tailwind CSS
+
+---
+
+That is every detail needed to reproduce the hero section exactly as built.
+
+---
+
+## 26. Axion Studio — Design Agency Landing Page
+
+**🔗 Live Preview:** [axion-studio-showcase.lovable.app](https://axion-studio-showcase.lovable.app)
+
+**🛠 Tech Stack:** React · Vite · TypeScript · Tailwind CSS · shaders · lucide-react
+
+next entry 
+https://axion-studio-showcase.lovable.app
+
+build exactly as per this said no change 
+Build a React + Vite + Tailwind CSS landing page for "Axion Studio" - a design agency site. Use the `shaders` package (npm: `shaders`) for the hero background, `lucide-react` for icons. The page has 3 sections. Match every detail exactly:
+
+---
+
+SECTION 1: HERO (Full viewport height)
+
+Background: Light gray `#EFEFEF` with a full-screen animated shader overlay (positioned absolute, inset-0, z-10, pointer-events-none). The shader stack uses components from `shaders/react`:
+
+- `Swirl` - colorA: `#ffffff`, colorB: `#f0f0f0`, detail: 1.7
+
+- `ChromaFlow` - baseColor: `#ffffff`, downColor/leftColor/rightColor/upColor: `#ff5f03`, momentum: 13, radius: 3.5
+
+- `FlutedGlass` - aberration: 0.61, angle: 31, frequency: 8, highlight: 0.12, highlightSoftness: 0, lightAngle: -90, refraction: 4, shape: "rounded", softness: 1, speed: 0.15
+
+- `FilmGrain` - strength: 0.05
+
+Navigation (z-20, relative): A pill-shaped white navbar (`bg-white rounded-full`) with 5px padding, inside a max-w-[1440px] container with p-2 sm:p-3.
+
+- LEFT: Dark circle logo (w-9 h-9 sm:w-10 sm:h-10, bg-gray-900, rounded-full) with white text "AX" (10px/11px, font-bold, tracking-tight). Next to it (hidden on mobile, shown md+): nav links "Projects", "Studio", "Journal", "Connect" - 14px, text-gray-900, hover:text-gray-500, transition-colors duration-300, gap-6.
+
+- RIGHT (hidden on mobile, shown md+): 
+
+  - Text "Taking on projects for Q1 2026" (13px, text-gray-600, hidden below lg)
+
+  - Clock icon (lucide, size 14) + live London time "{HH:MM} in London" (13px, text-gray-600)
+
+  - CTA button: bg-gray-900, text-white, 13px font-medium, rounded-full, pl-5 pr-2 py-2. Text "Book a strategy call" with a HOVER TEXT ROLL animation: the text is duplicated inside a flex-col container with overflow-hidden h-[20px], on group-hover it translates -50% vertically (duration-500, ease cubic-bezier(0.25,0.1,0.25,1)). Arrow icon in a white circle (w-6 h-6) that rotates -45deg on hover (same easing).
+
+- MOBILE: A "Menu"/"Close" toggle button (md:hidden), bg-gray-900, rounded-full, with Menu/X icons from lucide-react.
+
+Mobile Menu Overlay: Fixed inset-0, z-50. Black/60 backdrop. A white bottom sheet (rounded-2xl, mx-3 mb-3) that slides up (translate-y-full to translate-y-0, duration-500, ease cubic-bezier(0.32,0.72,0,1)). Contains: time badge, nav links (28px/32px font-medium), and a "Start a project" button with arrow.
+
+Hero Content (z-20): Positioned at the bottom of the viewport using flexbox (flex-1 spacer above). Max-w-[1440px], px-5 sm:px-8 lg:px-12, pb-14 sm:pb-16 lg:pb-20.
+
+- Small label: "Axion Studio" (13px/14px, text-gray-900, tracking-wide, mb-5 sm:mb-8)
+
+- Headline h1: "We craft digital experiences / for brands ready to dominate / their category online." - clamp(1.75rem,7vw,4.2rem) on mobile, clamp(2.5rem,5vw,4.2rem) on sm+. font-medium, leading-[1.08], tracking-[-0.03em], text-gray-900. Line breaks hidden on mobile (uses `<br className="hidden sm:block" />` with `<span className="sm:hidden"> </span>` fallback spaces).
+
+- CTA row (mt-8 sm:mt-12, flex-col sm:flex-row, gap-4 sm:gap-5):
+
+  - Orange button: bg-[#F26522], hover:bg-[#e05a1a], text-white, 13px/14px, rounded-full, pl-5 sm:pl-6 pr-2 py-2. Same text-roll hover animation for "Start a project". White circle (w-7 h-7 sm:w-8 sm:h-8) with orange ArrowRight that rotates -45deg on hover.
+
+  - Partner badge: White pill with subtle shadow (0_2px_8px_rgba(0,0,0,0.08)), hover shadow (0_4px_16px_rgba(0,0,0,0.12)), rounded-[4px]. Contains an inline SVG icon (the starburst/compass shape below, w-5 h-5 sm:w-6 sm:h-6, fill-current text-[#E8704E]), text "Certified Partner" (13px/14px font-medium), and a dark badge "Featured" (10px/11px, bg-gray-900, text-white, px-1.5 sm:px-2 py-0.5, rounded).
+
+SVG Icon for partner badge:
+
+```svg
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z"/></svg>
+
+```
+
+---
+
+SECTION 2: ABOUT (White background)
+
+`bg-white`, pt-16 sm:pt-20 lg:pt-32, pb-12 sm:pb-16 lg:pb-24, overflow-hidden. Max-w-[1440px] container.
+
+Badge row: px-5 sm:px-8 lg:px-12, flex items-center gap-3, mb-6 sm:mb-8.
+
+- Numbered circle: w-6 h-6 sm:w-7 sm:h-7, rounded-full, bg-gray-900, text-white, 11px/12px font-semibold. Shows "1".
+
+- Pill label: "Introducing Axion" - 12px/13px, font-medium, border border-gray-200, rounded-full, px-3 sm:px-4 py-1 sm:py-1.5.
+
+Heading h2: "Strategy-led creatives, delivering / results in digital and beyond." - clamp(1.5rem,4vw,3.2rem), font-medium, leading-[1.12], tracking-[-0.02em], text-gray-900, mb-12 sm:mb-16 lg:mb-28.
+
+Content area (responsive):
+
+- MOBILE/TABLET (lg:hidden): Stacked - paragraph + button, then images.
+
+  - Paragraph: "Through research, creative thinking and iteration we help growing brands realize their digital full potential." - 15px/17px, leading-[1.6], font-medium, text-gray-900.
+
+  - Button: "About our studio" - orange (#F26522), same text-roll animation, white arrow circle rotates -45deg.
+
+  - Two images: flex-col sm:flex-row, gap-4 sm:gap-5. First: sm:w-[45%] aspect-[438/346]. Second: sm:w-[55%] aspect-[900/600]. Both rounded-xl sm:rounded-2xl, object-cover.
+
+- DESKTOP (hidden lg:grid): `grid-cols-[26%_1fr_48%] items-end gap-6 xl:gap-8`.
+
+  - Left column (self-end): Small image, aspect-[438/346], rounded-2xl.
+
+  - Center column (self-start, flex justify-end): Paragraph (16px/18px, leading-[1.65], whitespace-nowrap, with `<br/>` between lines) + orange button.
+
+  - Right column (self-end): Large image, aspect-[3/2], rounded-2xl.
+
+Image URLs:
+
+- Small image: `https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090123_74be96d4-9c1b-40cf-932a-96f4f4babed3.png&w=1280&q=85`
+
+- Large image: `https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260516_090133_c157d30b-a99a-4477-bec1-a446149ec3f2.png&w=1280&q=85`
+
+---
+
+SECTION 3: CASE STUDIES (Light gray background)
+
+`bg-[#F5F5F5]`, pt-16 sm:pt-20 lg:pt-28, pb-16 sm:pb-20 lg:pb-28. Max-w-[1440px] container.
+
+Badge row: Same pattern as Section 2, but number is "2", label is "Featured client work", border-gray-300.
+
+Heading h2: "Our projects" - same clamp sizing as hero headline (clamp(1.75rem,7vw,4.2rem) / clamp(2.5rem,5vw,4.2rem)), font-medium, leading-[1.08], tracking-[-0.03em], mb-10 sm:mb-14 lg:mb-16.
+
+Cards Grid: `grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-7`, px-5 sm:px-8 lg:px-12.
+
+Card 1 (Narrativ):
+
+- Video container: aspect-[329/246], rounded-2xl, overflow-hidden, bg-[#1a1d2e], group, cursor-pointer.
+
+- Video: `src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260516_122702_390f5305-8719-41d5-ae80-d23ab3796c28.mp4"`, autoPlay, muted, loop, playsInline, w-full h-full object-cover.
+
+- Hover button (absolute bottom-4 left-4): A white circle (h-9 w-9) that expands to w-[148px] on group-hover (transition-all duration-300 ease-in-out). Contains "Learn more" text (13px, font-medium, opacity-0 to opacity-100 on hover with delay-100) and a link/chain SVG icon (14x14, -rotate-45 to rotate-0 on hover). The SVG is the lucide "link" icon drawn manually with two arc paths.
+
+- Description: "Winner of Site of the Month 2025 - an interactive 3D showcase driving record engagement" - 13px/14px, text-gray-600, mt-4, leading-relaxed.
+
+- Title: "Narrativ" - 14px/15px, font-semibold, text-gray-900, mt-1.
+
+Card 2 (Luminar):
+
+- Video container: aspect-square, rounded-2xl, overflow-hidden, bg-[#6b6b6b], group, cursor-pointer.
+
+- Video: `src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260516_123323_f909c2b8-ff6c-4edf-882b-8ebcdbe389b5.mp4"`, autoPlay, muted, loop, playsInline, w-full h-full object-cover.
+
+- Hover button (absolute bottom-4 left-4): A DARK circle (bg-gray-900, h-9 w-9) that expands to w-[168px] on group-hover. Contains "View case study" text (13px, font-medium, text-white) and a white ArrowRight icon (size 14) that transitions from -rotate-45 to rotate-0 on hover.
+
+- Description: "Transforming a dated platform into a conversion-focused brand experience" - 13px/14px, text-gray-600, mt-4, leading-relaxed.
+
+- Title: "Luminar" - 14px/15px, font-semibold, text-gray-900, mt-1.
+
+---
+
+GLOBAL STYLES (index.css):
+
+Standard Tailwind directives plus two utility classes (not actively used in current layout but defined):
+
+- `.liquid-glass`: rgba(255,255,255,0.01) bg, backdrop-filter blur(4px), inset box-shadow, pseudo-element gradient border using mask-composite.
+
+- `.liquid-glass-strong`: Same but blur(50px), no pseudo-element.
+
+---
+
+TECHNICAL DETAILS:
+
+- Framework: React 18 + TypeScript + Vite
+
+- Styling: Tailwind CSS 3.4 (default config, no custom theme extensions)
+
+- Packages: `shaders` (for Shader, ChromaFlow, FilmGrain, FlutedGlass, Swirl from `shaders/react`), `lucide-react` (ArrowRight, Clock, Menu, X)
+
+- Font: System default (no custom font loaded)
+
+- All animations use: `duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]` unless noted otherwise
+
+- Max content width: 1440px, centered with mx-auto
+
+- Responsive breakpoints: Default Tailwind (sm: 640px, md: 768px, lg: 1024px, xl: 1280px)
+
+- Live clock: Updates every second, shows London timezone in HH:MM format
