@@ -75,6 +75,7 @@ A separate collection of production-ready **SaaS hero-section prompts** with liv
 | 21 | Bloom Reel Vista — Video Agency Hero | React · Tailwind CSS v4 · Google Fonts | [Preview →](https://bloom-reel-vista.lovable.app) |
 | 22 | Starscape Shaper — Cinematic Space-Travel Landing Page | React · Framer Motion · CDN | [Preview →](https://starscape-shaper-art.lovable.app) |
 | 23 | Jack — 3D Creator Portfolio Landing Page | React · TypeScript · Tailwind CSS · Framer Motion · lucide-react | [Preview →](https://portfolio-3d-utsav.lovable.app) |
+| 24 | Prisma — Creative Studio Landing Page | React · Vite · TypeScript · Tailwind CSS · Framer Motion · lucide-react | [Preview →](https://light-play-creations.lovable.app) |
 
 ---
 
