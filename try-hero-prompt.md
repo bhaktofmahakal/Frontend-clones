@@ -29,6 +29,7 @@
 | 19 | [Swift Spark Aesthetics — AI Website Builder Hero](#19-swift-spark-aesthetics--ai-website-builder-hero) | React · Tailwind CSS · TypeScript · Motion · hls.js · lucide-react | [Preview →](https://swift-spark-aesthetics.lovable.app/) |
 | 20 | [Crest AI — AI Automation Hero](#20-crest-ai--ai-automation-hero) | React · Vite · Tailwind CSS · TypeScript · Framer Motion · lucide-react · hls.js | [Preview →](https://crest-ai-reach.lovable.app/) |
 | 21 | [Bloom Reel Vista — Video Agency Hero](#21-bloom-reel-vista--video-agency-hero) | React · Tailwind CSS v4 · Google Fonts | [Preview →](https://bloom-reel-vista.lovable.app) |
+| 22 | [Starscape Shaper — Cinematic Space-Travel Landing Page](#22-starscape-shaper--cinematic-space-travel-landing-page) | React · Framer Motion · CDN | [Preview →](https://starscape-shaper-art.lovable.app) |
 
 ---
 
@@ -2086,3 +2087,89 @@ Two side-by-side buttons, `flex gap-4 items-center`:
 | Nav links | `hover:bg-white/10` with `transition-colors` |
 
 No entrance animations or motion libraries required.
+
+---
+
+## 22. Starscape Shaper — Cinematic Space-Travel Landing Page
+
+**🔗 Live Preview:** [starscape-shaper-art.lovable.app](https://starscape-shaper-art.lovable.app)
+
+**🛠 Tech Stack:** React 18.3.1 (CDN) · ReactDOM 18.3.1 (CDN) · Babel Standalone 7.29.0 (CDN) · Framer Motion 11.11.17 (CDN)
+
+### Build Prompt
+
+Build a single-page landing site with two full-height sections (**Hero + Capabilities**), both using looping background videos with **custom JS crossfade**, a shared **liquid-glass design system**, and **Framer Motion** entrance animations.
+
+### Layout & Structure
+
+- `body` background: `#000`
+- React app mounted on `#root`
+- Two full-height sections (`min-h-screen`) stacked vertically:
+  - **Hero**
+  - **Capabilities**
+- Shared max-width container (`max-w-6xl mx-auto px-6`) for content alignment
+
+### Background Videos (Crossfade)
+
+- Each section has **two** stacked `video` elements (`absolute inset-0 w-full h-full object-cover`)
+- Videos are `autoPlay loop muted playsInline`
+- Use custom JS to toggle a `data-active` flag every 8–10s
+- Crossfade by animating opacity:
+  - Active video: `opacity-100`
+  - Inactive video: `opacity-0`
+  - Transition: `transition-opacity duration-[2000ms] ease-in-out`
+- Keep a dark overlay gradient (`from-black/70 via-black/40 to-black/80`) for legibility
+
+### Liquid-Glass Design System
+
+Use the same glass styling across navbar, badges, and cards:
+
+- `bg-white/10`
+- `backdrop-blur-xl`
+- `border border-white/20`
+- Subtle inner highlight: `shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]`
+- Rounded corners: `rounded-2xl` (buttons: `rounded-full`)
+
+### Hero Section
+
+**Content layout:** centered, stacked, and motion-animated.
+
+- Glass badge: `"Deep-Space Tourism • 2026 Launch"`
+- Headline: `"Journey Beyond the Stars"` with gradient highlight on `"Stars"`
+- Subheadline: short, cinematic copy about immersive space travel
+- CTA row:
+  - Primary: `"Reserve Your Seat"`
+  - Secondary: `"View Fleet"`
+
+### Capabilities Section
+
+Grid of 3–4 glass cards:
+
+- **Zero-G Suites** — private cabin experience
+- **Aurora Routes** — polar sky corridors
+- **AI Pilots** — precision autonomous navigation
+- **Stellar Lounge** — observation deck & concierge
+
+### Framer Motion Animations
+
+Use staggered entrance animations:
+
+| Element | Motion |
+|---------|--------|
+| Badge | `initial={{ opacity: 0, y: 12 }}` → `animate={{ opacity: 1, y: 0 }}` |
+| Headline | `initial={{ opacity: 0, y: 20 }}` → `animate={{ opacity: 1, y: 0 }}` |
+| Subheadline | `initial={{ opacity: 0 }}` → `animate={{ opacity: 1 }}` |
+| Buttons | `initial={{ opacity: 0, y: 16 }}` → `animate={{ opacity: 1, y: 0 }}` |
+| Capability cards | `initial={{ opacity: 0, y: 20 }}` → `whileInView={{ opacity: 1, y: 0 }}` with `staggerChildren` |
+
+### Color Palette
+
+| Token | Value |
+|-------|-------|
+| Background | `#000000` |
+| Primary text | `#ffffff` |
+| Secondary text | `rgba(255,255,255,0.72)` |
+| Accent gradient | `#7aa2ff` → `#b8f3ff` |
+| Glass border | `rgba(255,255,255,0.20)` |
+| CTA primary bg | `rgba(255,255,255,0.9)` |
+| CTA primary text | `#0b0f1a` |
