@@ -18,7 +18,6 @@ A curated collection of high-fidelity frontend clones of modern SaaS and AI-prod
 ## Table of Contents
 
 - [Live Clones](#live-clones)
-- [ElevenLabs Clone — Local Setup](#elevenlabs-clone--local-setup)
 - [Hero Prompt Templates](#hero-prompt-templates)
 - [Personal Projects](#personal-projects)
 - [Contributing](#contributing)
