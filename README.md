@@ -1,4 +1,4 @@
-# Frontend Clones
+# Frontend 
 
 ![License](https://img.shields.io/badge/license-Educational%20Use%20Only-blue)
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
